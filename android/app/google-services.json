@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1062598222598",
+    "project_id": "sniperpro-eaa57",
+    "storage_bucket": "sniperpro-eaa57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062598222598:android:a0c6f5797242ee7675f487",
+        "android_client_info": {
+          "package_name": "com.sniperpro.sniperpro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq9GRyztHfbDfnLaV_KKVfoPk5dqKb_C8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
