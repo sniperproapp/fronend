@@ -59,7 +59,7 @@ class ProfProductCreateState extends Equatable {
         image1: image1,
         compventa: compventa.value,
         price1: double.parse(price1!.value),
-        price2: double.parse(price1!.value),
+        price2: double.parse(price2!.value),
         sl: double.parse(sl!.value),
         tp1: double.parse(tp1!.value),
         tp2: double.parse(tp2!.value),

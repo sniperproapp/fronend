@@ -83,7 +83,7 @@ class ClientrankingListItem extends StatelessWidget {
             children: [
               Text('${ranking!.ganadas!}/',
                   style: TextStyle(color: Colors.green)),
-              Text(((ranking!.ganadas! - ranking!.total!).abs()).toString(),
+              Text(ranking!.perdidas.toString(),
                   style: TextStyle(color: Colors.red)),
             ],
           )
@@ -97,9 +97,11 @@ class ClientrankingListItem extends StatelessWidget {
       child: Column(
         children: [
           Text('%', style: TextStyle(color: Colors.white)),
-          Text(
-              '${(ranking!.ganadas! / ranking!.total! * 100).toStringAsFixed(2)}%',
-              style: TextStyle(color: Colors.green))
+          ranking?.total == 0
+              ? Text('0%', style: TextStyle(color: Colors.green))
+              : Text(
+                  '${(ranking!.ganadas! / ranking!.total! * 100).toStringAsFixed(2)}%',
+                  style: TextStyle(color: Colors.green))
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:sniper_pro/src/domain/useCases/auth/GetCategorySessionUserCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/GetUserSessionUserCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/LoginUseCase.dart';
+import 'package:sniper_pro/src/domain/useCases/auth/LoginidUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/LogoutUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/RecuperarpassUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/RegisterUseCase.dart';
@@ -18,9 +19,11 @@ class AuthUseCases {
   GetCategorySessionUserCase getcategorysession;
   SaveUsertokenmessageCase messagetoken;
   RecuperarpassUseCase enviarmail;
+  LoginidUseCase loginid;
 
   AuthUseCases(
       {required this.login,
+      required this.loginid,
       required this.logout,
       required this.enviarmail,
       required this.register,

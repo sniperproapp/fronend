@@ -13,6 +13,7 @@ abstract class AuthRepository {
   Future<void> saveCategorySession(List<Category> categoris);
   Future<void> saveUsertokenmessage(String token);
   Future<Resource<AuthResponse>> login(String email, String password);
+  Future<Resource<AuthResponse>> loginid(int id);
   Future<Resource<bool>> recuperarpass(String email);
 
   Future<Resource<AuthResponse>> register(User user);

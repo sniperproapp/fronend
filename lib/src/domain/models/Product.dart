@@ -17,6 +17,8 @@ class Product {
   bool? tpactivate3;
   bool? tpactivate4;
   bool? tpactivate5;
+  bool? descarte;
+  bool? slactivate;
   String name;
   String description;
   String? fecha;
@@ -48,6 +50,8 @@ class Product {
     this.tpactivate3,
     this.tpactivate4,
     this.tpactivate5,
+    this.descarte,
+    this.slactivate,
     this.estad,
     this.createdat,
     this.like,
@@ -102,6 +106,12 @@ class Product {
         tpactivate5: json["tpactivate5"] is String
             ? bool.parse(json["tpactivate5"])
             : json["tpactivate5"],
+        slactivate: json["slactivate"] is String
+            ? bool.parse(json["slactivate"])
+            : json["slactivate"],
+        descarte: json["descarte"] is String
+            ? bool.parse(json["descarte"])
+            : json["descarte"],
         name: json["name"] ?? '',
         description: json["description"] ?? '',
         fecha: json["fecha"] ?? '',
@@ -186,6 +196,8 @@ class Product {
         "tpactivate3": tpactivate3,
         "tpactivate4": tpactivate4,
         "tpactivate5": tpactivate5,
+        "descarte": descarte,
+        "slactivate": slactivate,
         "id_category": idCategory,
         "id_user": iduser,
         "user": user != null ? user?.toJson() : []

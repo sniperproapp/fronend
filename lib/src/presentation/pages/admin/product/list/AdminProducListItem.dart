@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sniper_pro/src/domain/models/Product.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/product/list/bloc/AdminProducListBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/product/list/bloc/AdminProductListEvent.dart';
@@ -173,6 +174,25 @@ class AdminProductListItem extends StatelessWidget {
                     width: 70,
                     child: Text(product?.sl.toString() ?? '',
                         style: TextStyle(color: Colors.red))),
+                Container(
+                    child: Checkbox(
+                  checkColor:
+                      product?.slactivate == false ? Colors.red : Colors.green,
+                  value: product?.slactivate,
+                  onChanged: (bool? value) {
+                    if (product?.tpactivate1 != true &&
+                        product?.descarte != true) {
+                      bloc?.add(Activatetp1change(id: product!.id!, numero: 6));
+                    } else {
+                      Fluttertoast.showToast(
+                          msg:
+                              'No Puede ser SL si hay un TP activo o esta Descartada la señal',
+                          toastLength: Toast.LENGTH_LONG);
+                    }
+
+//product?.slactivate = value;
+                  },
+                ))
               ],
             ),
           ),
@@ -246,9 +266,15 @@ class AdminProductListItem extends StatelessWidget {
                     product?.tpactivate1 == false ? Colors.red : Colors.green,
                 value: product?.tpactivate1,
                 onChanged: (bool? value) {
-                  bloc?.add(Activatetp1change(id: product!.id!, numero: 1));
-                  print(product?.tpactivate1);
-                  product?.tpactivate1 = value;
+                  if (product?.descarte != true &&
+                      product?.slactivate != true) {
+                    bloc?.add(Activatetp1change(id: product!.id!, numero: 1));
+                  } else {
+                    Fluttertoast.showToast(
+                        msg:
+                            'No Puede ser TP si hay un DESCARTE activo o esta en Sl la señal',
+                        toastLength: Toast.LENGTH_LONG);
+                  }
                 },
               )),
             ],
@@ -284,9 +310,15 @@ class AdminProductListItem extends StatelessWidget {
                     product?.tpactivate2 == false ? Colors.red : Colors.green,
                 value: product?.tpactivate2,
                 onChanged: (bool? value) {
-                  bloc?.add(Activatetp1change(id: product!.id!, numero: 2));
-                  print(product?.tpactivate2);
-                  product?.tpactivate2 = value;
+                  if (product?.descarte != true &&
+                      product?.slactivate != true) {
+                    bloc?.add(Activatetp1change(id: product!.id!, numero: 2));
+                  } else {
+                    Fluttertoast.showToast(
+                        msg:
+                            'No Puede ser TP si hay un DESCARTE activo o esta en Sl la señal',
+                        toastLength: Toast.LENGTH_LONG);
+                  }
                 },
               )),
             ],
@@ -321,9 +353,14 @@ class AdminProductListItem extends StatelessWidget {
                   product?.tpactivate3 == false ? Colors.red : Colors.green,
               value: product?.tpactivate3,
               onChanged: (bool? value) {
-                bloc?.add(Activatetp1change(id: product!.id!, numero: 3));
-                print(product?.tpactivate3);
-                product?.tpactivate3 = value;
+                if (product?.descarte != true && product?.slactivate != true) {
+                  bloc?.add(Activatetp1change(id: product!.id!, numero: 3));
+                } else {
+                  Fluttertoast.showToast(
+                      msg:
+                          'No Puede ser TP si hay un DESCARTE activo o esta en Sl la señal',
+                      toastLength: Toast.LENGTH_LONG);
+                }
               },
             )),
           ],
@@ -357,9 +394,14 @@ class AdminProductListItem extends StatelessWidget {
                   product?.tpactivate4 == false ? Colors.red : Colors.green,
               value: product?.tpactivate4,
               onChanged: (bool? value) {
-                bloc?.add(Activatetp1change(id: product!.id!, numero: 4));
-                print(product?.tpactivate4);
-                product?.tpactivate4 = value;
+                if (product?.descarte != true && product?.slactivate != true) {
+                  bloc?.add(Activatetp1change(id: product!.id!, numero: 4));
+                } else {
+                  Fluttertoast.showToast(
+                      msg:
+                          'No Puede ser TP si hay un DESCARTE activo o esta en Sl la señal',
+                      toastLength: Toast.LENGTH_LONG);
+                }
               },
             )),
           ],
@@ -393,9 +435,46 @@ class AdminProductListItem extends StatelessWidget {
                   product?.tpactivate5 == false ? Colors.red : Colors.green,
               value: product?.tpactivate5,
               onChanged: (bool? value) {
-                bloc?.add(Activatetp1change(id: product!.id!, numero: 5));
-                print(product?.tpactivate5);
-                product?.tpactivate5 = value;
+                if (product?.descarte != true && product?.slactivate != true) {
+                  bloc?.add(Activatetp1change(id: product!.id!, numero: 5));
+                } else {
+                  Fluttertoast.showToast(
+                      msg:
+                          'No Puede ser TP si hay un DESCARTE activo o esta en Sl la señal',
+                      toastLength: Toast.LENGTH_LONG);
+                }
+              },
+            )),
+          ],
+        ),
+        Row(
+          children: [
+            Container(
+              width: 100,
+              child: Text(
+                'DESCARTAR:',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: product?.tpactivate5 == false
+                        ? Colors.red
+                        : Colors.green),
+              ),
+            ),
+            Container(
+                child: Checkbox(
+              checkColor:
+                  product?.descarte == false ? Colors.red : Colors.green,
+              value: product?.descarte,
+              onChanged: (bool? value) {
+                if (product?.tpactivate1 != true &&
+                    product?.slactivate != true) {
+                  bloc?.add(Activatetp1change(id: product!.id!, numero: 7));
+                } else {
+                  Fluttertoast.showToast(
+                      msg:
+                          'No Puede ser descartado si hay un TP activo o esta en Sl la señal',
+                      toastLength: Toast.LENGTH_LONG);
+                }
               },
             )),
           ],

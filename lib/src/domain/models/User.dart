@@ -4,6 +4,7 @@ class User {
   int? id;
   int? estado;
   int? descargo;
+  int? mensaje;
   String name;
   String lastname;
   String? email;
@@ -18,6 +19,7 @@ class User {
     this.id,
     this.estado,
     this.descargo,
+    this.mensaje,
     required this.name,
     required this.lastname,
     this.email,
@@ -40,6 +42,7 @@ class User {
         id: json["id"] ?? 0,
         estado: json["estado"] ?? 0,
         descargo: json["descargo"] ?? 0,
+        mensaje: json["mensaje"] ?? 0,
         name: json["name"],
         lastname: json["lastname"],
         email: json["email"],
@@ -56,6 +59,7 @@ class User {
         "id": id,
         "estado": estado,
         "descargo": descargo,
+        "mensaje": mensaje,
         "name": name,
         "lastname": lastname,
         "email": email,

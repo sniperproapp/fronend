@@ -127,6 +127,6 @@ List<BlocProvider> blocProviders = [
       create: (context) => AdminProducreportBloc(locator<ProductsUseCase>())),
   BlocProvider<ClientRankingListBloc>(
       create: (context) => ClientRankingListBloc(locator<ProductsUseCase>())),
-  BlocProvider<notificationBloc>(
-      create: (context) => notificationBloc(locator<AuthUseCases>())),
+  BlocProvider<NotificationBloc>(
+      create: (context) => NotificationBloc(locator<AuthUseCases>())),
 ];

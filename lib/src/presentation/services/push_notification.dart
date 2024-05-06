@@ -9,6 +9,7 @@ import 'package:sniper_pro/firebase_options.dart';
 
 class PushNotificationService {
   static FirebaseMessaging messaging = FirebaseMessaging.instance;
+
   static String? token;
   static StreamController<String> _messageStream =
       new StreamController.broadcast();

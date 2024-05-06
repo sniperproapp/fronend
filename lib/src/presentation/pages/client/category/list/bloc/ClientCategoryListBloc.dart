@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:sniper_pro/src/domain/models/Category.dart';
+
 import 'package:sniper_pro/src/domain/useCases/Categories/CategoriesUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/AuthUseCases.dart';
 import 'package:sniper_pro/src/presentation/Utils/Resource.dart';
@@ -14,8 +13,8 @@ class ClientCategoryListBloc
 
   ClientCategoryListBloc(this.categoriesUseCase, this.authUseCases)
       : super(ClientCategoryListState()) {
-    on<Getcategories>(_ongetCategories);
-    on<Getcategoriesserver>(_ongetCategoriesserver);
+    on<Limpiarlistnotificacion>(_onLimpiarlistnotificacion);
+    on<Getcategories>(_onGetcategories);
     on<categorySaveUserSession>(_oncategorySaveUserSession);
   }
 
@@ -24,7 +23,7 @@ class ClientCategoryListBloc
     await authUseCases.savelistcategory.run(event.list);
   }
 
-  Future<void> _ongetCategories(
+  Future<void> _onGetcategories(
       Getcategories event, Emitter<ClientCategoryListState> emit) async {
     emit(state.copyWith(response: Loading()));
 
@@ -34,23 +33,23 @@ class ClientCategoryListBloc
     // ignore: unnecessary_null_comparison
     if (response != null) {
       emit(state.copyWith(response: Success(response)));
-      Fluttertoast.showToast(
-          msg: 'no entro server', toastLength: Toast.LENGTH_LONG);
     } else {
       emit(state.copyWith(response: responses));
-      Fluttertoast.showToast(
-          msg: 'entro server', toastLength: Toast.LENGTH_LONG);
     }
   }
 
-  Future<void> _ongetCategoriesserver(
-      Getcategoriesserver event, Emitter<ClientCategoryListState> emit) async {
+  Future<void> _onLimpiarlistnotificacion(Limpiarlistnotificacion event,
+      Emitter<ClientCategoryListState> emit) async {
     emit(state.copyWith(response: Loading()));
 
     var response = await authUseCases.getcategorysession.rum();
-    Fluttertoast.showToast(
-        msg: response[0].notification.toString(),
-        toastLength: Toast.LENGTH_LONG);
+
+    response[0].notification = 0;
+    var indice = response.indexWhere((indice) => indice.name == event.name);
+
+    response[indice].notification = 0;
+
     emit(state.copyWith(response: Success(response)));
+    await authUseCases.savelistcategory.run(response);
   }
 }

@@ -9,19 +9,21 @@ import 'package:sniper_pro/src/presentation/Messaging/bloc/notificationState.dar
 import 'package:equatable/equatable.dart';
 import 'package:sniper_pro/src/presentation/local_notification/local_notification.dart';
 
-Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  var mensaje = message.data;
-  var body = mensaje['body'];
-  var title = mensaje['title'];
-  Random random = Random();
-  var id = random.nextInt(10000);
-  LocalNotification.showLocalNotification(id: id, title: title, body: body);
-}
-
-class notificationBloc extends Bloc<notificationEvent, notificationState> {
+class NotificationBloc extends Bloc<notificationEvent, notificationState> {
   FirebaseMessaging messaging = FirebaseMessaging.instance;
   AuthUseCases authUseCases;
-  notificationBloc(this.authUseCases) : super(notificationState()) {
+  NotificationBloc(this.authUseCases) : super(notificationState()) {
+    Future<void> firebaseMessagingBackgroundHandler(
+        RemoteMessage message) async {
+      var mensaje = message.data;
+      var body = mensaje['body'];
+      var title = mensaje['title'];
+      Random random = Random();
+      var id = random.nextInt(10000);
+      LocalNotification.showLocalNotification(
+          id: id, title: 'appcerrada', body: 'app cerrada');
+    }
+
     _onForegrounMessage();
   }
 
@@ -62,17 +64,16 @@ class notificationBloc extends Bloc<notificationEvent, notificationState> {
 
     LocalNotification.showLocalNotification(id: id, title: title, body: body);
     var list = await authUseCases.getcategorysession.rum();
-    list[0].notification = 10;
-    print(
-        ' ...................................................................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
-    print(list[0].notification);
+    var indice = list.indexWhere((indice) => indice.name == title);
+
+    list[indice].notification = 1;
 
     await authUseCases.savelistcategory.run(list);
   }
 
   void _onForegrounMessage() {
     FirebaseMessaging.onMessage.listen(handleRemoteMessage);
-    // FirebaseMessaging.onBackgroundMessage(firebaseMesageBacgroudHandle);
-    //FirebaseMessaging.onMessageOpenedApp.listen(handleRemoteMessage);
+    FirebaseMessaging.onBackgroundMessage(handleRemoteMessage);
+    FirebaseMessaging.onMessageOpenedApp.listen(handleRemoteMessage);
   }
 }

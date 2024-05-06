@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     _bloc = BlocProvider.of<LoginBloc>(context, listen: false);
-    context.read<notificationBloc>().requesPermission();
+    context.read<NotificationBloc>().requesPermission();
     return Scaffold(
       body: Container(
         width: double.infinity,
