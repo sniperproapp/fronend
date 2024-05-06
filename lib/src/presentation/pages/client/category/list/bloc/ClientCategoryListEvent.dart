@@ -12,8 +12,11 @@ class Getcategories extends ClientCategoryListEvent {
   const Getcategories();
 }
 
-class Getcategoriesserver extends ClientCategoryListEvent {
-  const Getcategoriesserver();
+class Limpiarlistnotificacion extends ClientCategoryListEvent {
+  final String name;
+  const Limpiarlistnotificacion({required this.name});
+  @override
+  List<Object?> get props => [name];
 }
 
 class categorySaveUserSession extends ClientCategoryListEvent {

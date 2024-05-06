@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sniper_pro/src/domain/models/Category.dart';
 import 'package:sniper_pro/src/presentation/pages/client/category/list/bloc/ClientCategoryListBloc.dart';
+import 'package:sniper_pro/src/presentation/pages/client/category/list/bloc/ClientCategoryListEvent.dart';
 
 class ClientCategoriListItem extends StatelessWidget {
   Category? category;
@@ -34,6 +35,19 @@ class ClientCategoriListItem extends StatelessWidget {
               _botonCerradas(context),
             ],
           ),
+        ),
+        Center(
+          child: Container(
+            margin: EdgeInsets.only(top: 80),
+            width: 40,
+            height: 40,
+            child: category?.notification != 0
+                ? Image.asset(
+                    'assets/img/notificacion.gif',
+                    fit: BoxFit.cover,
+                  )
+                : Container(),
+          ),
         )
       ]),
     );
@@ -42,10 +56,11 @@ class ClientCategoriListItem extends StatelessWidget {
   Widget _botonActivas(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        bloc?.add(Limpiarlistnotificacion(name: category!.name));
         Navigator.pushNamed(context, 'client/product/list',
             arguments: {'estado': "ACTIVO", 'category': category});
       },
-      child: Text(category!.notification.toString(),
+      child: Text('ACTIVAS',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
     );
   }

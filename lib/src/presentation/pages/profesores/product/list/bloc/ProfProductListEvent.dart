@@ -28,3 +28,19 @@ class Activatetp1change extends ProfProductListEvent {
   @override
   List<Object?> get props => [id, numero];
 }
+
+class Activateslchange extends ProfProductListEvent {
+  final int id;
+  final int numero;
+  const Activateslchange({required this.id, required this.numero});
+  @override
+  List<Object?> get props => [id, numero];
+}
+
+class Activatedescartechange extends ProfProductListEvent {
+  final int id;
+  final int numero;
+  const Activatedescartechange({required this.id, required this.numero});
+  @override
+  List<Object?> get props => [id, numero];
+}

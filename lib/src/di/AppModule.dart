@@ -25,6 +25,7 @@ import 'package:sniper_pro/src/domain/useCases/auth/AuthUseCases.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/GetCategorySessionUserCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/GetUserSessionUserCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/LoginUseCase.dart';
+import 'package:sniper_pro/src/domain/useCases/auth/LoginidUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/LogoutUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/RecuperarpassUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/RegisterUseCase.dart';
@@ -102,7 +103,8 @@ abstract class AppModule {
       messagetoken: SaveUsertokenmessageCase(authRepository),
       enviarmail: RecuperarpassUseCase(authRepository),
       savelistcategory: SavecategorySessionUseCase(authRepository),
-      getcategorysession: GetCategorySessionUserCase(authRepository));
+      getcategorysession: GetCategorySessionUserCase(authRepository),
+      loginid: LoginidUseCase(authRepository));
 
   @Injectable()
   UsersUseCases get userUseCases => UsersUseCases(

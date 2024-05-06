@@ -1,6 +1,7 @@
 class Ranking {
   String? nombre;
   int? ganadas;
+  int? perdidas;
   int? total;
   String? imagen;
 
@@ -8,6 +9,7 @@ class Ranking {
     this.imagen,
     this.nombre,
     this.ganadas,
+    this.perdidas,
     this.total,
   });
   static List<Ranking> fromJsonListranking(List<dynamic> jsonList) {
@@ -23,6 +25,7 @@ class Ranking {
       imagen: json["imagen"],
       nombre: json["nombre"],
       ganadas: json["ganadas"],
+      perdidas: json["perdidas"],
       total: json["total"]);
 
   Map<String, dynamic> toJson() => {
@@ -30,5 +33,6 @@ class Ranking {
         "total": total,
         "nombre": nombre,
         "ganadas": ganadas,
+        "perdidas": perdidas,
       };
 }

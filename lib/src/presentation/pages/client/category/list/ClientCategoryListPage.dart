@@ -64,7 +64,7 @@ class _ClientCategoryListPageState extends State<ClientCategoryListPage> {
 
           return RefreshIndicator(
             onRefresh: () async {
-              _bloc?.add(Getcategoriesserver());
+              _bloc?.add(Getcategories());
             },
             child: Container(
               decoration: BoxDecoration(

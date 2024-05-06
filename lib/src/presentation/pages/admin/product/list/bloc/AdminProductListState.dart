@@ -8,6 +8,8 @@ class AdminProductListState extends Equatable {
   final bool? activatetp3;
   final bool? activatetp4;
   final bool? activatetp5;
+  final bool? descarte;
+  final bool? slactivate;
 
   const AdminProductListState(
       {this.response,
@@ -15,7 +17,9 @@ class AdminProductListState extends Equatable {
       this.activatetp2,
       this.activatetp3,
       this.activatetp4,
-      this.activatetp5});
+      this.activatetp5,
+      this.descarte,
+      this.slactivate});
 
   AdminProductListState copyWith(
       {Resource? response,
@@ -23,8 +27,17 @@ class AdminProductListState extends Equatable {
       bool? activatetp2,
       bool? activatetp3,
       bool? activatetp4,
-      bool? activatetp5}) {
-    return AdminProductListState(response: response, activatetp1: activatetp1);
+      bool? activatetp5,
+      bool? descarte,
+      bool? slactivate}) {
+    return AdminProductListState(
+        response: response,
+        activatetp1: activatetp1,
+        activatetp2: activatetp2,
+        activatetp3: activatetp3,
+        activatetp4: activatetp4,
+        descarte: descarte,
+        slactivate: slactivate ?? this.slactivate);
   }
 
   @override
@@ -35,6 +48,8 @@ class AdminProductListState extends Equatable {
         activatetp2,
         activatetp3,
         activatetp4,
-        activatetp5
+        activatetp5,
+        slactivate,
+        descarte
       ];
 }

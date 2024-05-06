@@ -18,6 +18,11 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
+  Future<Resource<AuthResponse>> loginid(int id) {
+    return authService.loginid(id);
+  }
+
+  @override
   Future<Resource<AuthResponse>> register(User user) {
     return authService.register(user);
   }
@@ -49,9 +54,6 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<void> saveCategorySession(List<Category> categoris) async {
-    Fluttertoast.showToast(
-        msg: categoris[0].notification.toString(),
-        toastLength: Toast.LENGTH_LONG);
     sharedPref.save('list', categoris);
   }
 

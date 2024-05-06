@@ -41,6 +41,33 @@ class AuthService {
     }
   }
 
+  Future<Resource<AuthResponse>> loginid(int id) async {
+    try {
+      var tokemessage = await sharedPref.read('token');
+      if (tokemessage == null) {
+        print(tokemessage);
+        tokemessage = '';
+      }
+      Uri url = Uri.parse('${ApiConfig.API_ECOMMERCE}/auth/loginid');
+      Map<String, String> headers = {"Content-Type": "application/json"};
+      String body = json.encode({'id': id, 'token': tokemessage});
+
+      final response = await http.post(url, headers: headers, body: body);
+      final data = json.decode(response.body);
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        AuthResponse authResponse = AuthResponse.fromJson(data);
+        print(data);
+        return Success(authResponse);
+      } else {
+        return Error(ListToString(data['message']));
+      }
+    } catch (e) {
+      print('Error: $e');
+      return Error(e.toString());
+    }
+  }
+
   Future<bool> logout() async {
     try {
       String email = '';
@@ -75,6 +102,7 @@ class AuthService {
       }
 
       user.estado = 0;
+      user.mensaje = 0;
       user.imagen =
           'https://firebasestorage.googleapis.com/v0/b/sniperpro-a9151.appspot.com/o/user_image.png?alt=media&token=54be3aec-fa14-419a-8f1a-c5f350ed7531';
       Uri url = Uri.parse('${ApiConfig.API_ECOMMERCE}/auth/register');

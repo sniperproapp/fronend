@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:sniper_pro/src/domain/models/Rol.dart';
 
 class RolesItem extends StatelessWidget {
   Role role;
+
   RolesItem(this.role);
 
   @override
