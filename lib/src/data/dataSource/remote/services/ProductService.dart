@@ -214,7 +214,8 @@ class ProductService {
         'tp5': product.tp5,
         'sl': product.sl,
         'estad': product.estad,
-        'compventa': product.compventa,
+        'id_category': product.idCategory,
+        'compventa': product.compventa
       });
 
       final response = await http.put(url, headers: headers, body: body);

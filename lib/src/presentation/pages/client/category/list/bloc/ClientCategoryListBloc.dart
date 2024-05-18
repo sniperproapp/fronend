@@ -27,15 +27,15 @@ class ClientCategoryListBloc
       Getcategories event, Emitter<ClientCategoryListState> emit) async {
     emit(state.copyWith(response: Loading()));
 
-    var response = await authUseCases.getcategorysession.rum();
+    // var response = await authUseCases.getcategorysession.rum();
     Resource responses = await categoriesUseCase.getcategory.run();
 
     // ignore: unnecessary_null_comparison
-    if (response != null) {
-      emit(state.copyWith(response: Success(response)));
-    } else {
-      emit(state.copyWith(response: responses));
-    }
+    // if (response != null) {
+    //  emit(state.copyWith(response: Success(response)));
+    // } else {
+    emit(state.copyWith(response: responses));
+    //}
   }
 
   Future<void> _onLimpiarlistnotificacion(Limpiarlistnotificacion event,

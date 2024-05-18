@@ -10,6 +10,8 @@ String categoryToJson(Category data) => json.encode(data.toJson());
 
 class Category {
   int? id;
+  int? activas;
+  int? pendientes;
   String name;
   String description;
   String? image;
@@ -17,6 +19,8 @@ class Category {
 
   Category({
     this.id,
+    this.activas,
+    this.pendientes,
     required this.name,
     required this.description,
     this.image,
@@ -35,6 +39,8 @@ class Category {
 
   factory Category.fromJson(Map<String, dynamic> json) => Category(
       id: json["id"],
+      activas: json["activas"],
+      pendientes: json["pendientes"],
       name: json["name"],
       description: json["description"],
       image: json["image"],
@@ -42,6 +48,8 @@ class Category {
 
   Map<String, dynamic> toJson() => {
         "id": id,
+        "activas": activas,
+        "pendientes": pendientes,
         "name": name,
         "description": description,
         "image": image,

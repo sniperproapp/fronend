@@ -84,48 +84,46 @@ class _RolesPageState extends State<RolesPage> {
               content: SizedBox(
                 width: 400,
                 height: 240,
-                child: Stack(
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                            height: 30,
-                            width: 30,
-                            child: Image.asset('assets/img/ICONOAYUDA.png')),
-                        Container(
-                          width: double.infinity,
-                          margin: EdgeInsets.only(top: 20, left: 20, right: 20),
-                          child: Text(
-                            'SNIPER TE RECUERDA QUE LOS 5 DE CADA MES QUEDAS INHABILITADO EN LOS SERVICIOS DE LA ACADEMIA (EDUCACIÓN, SEÑALES,SESIONES,CLASES) PARA REACTIVAR DEBES PAGAR TU MENSUALIDAD DE 120.000 MIL PESOS COLOMBIANOS O 30 USDT MAS INFORMACION CON ADMINISTRATIVO WHATSAAP +573214176779 ',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+                child: Container(
+                  child: Column(
+                    children: [
+                      Container(
+                          height: 30,
+                          width: 30,
+                          child: Image.asset('assets/img/ICONOAYUDA.png')),
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                        child: Text(
+                          'TODOS LOS 5 DE CADA MES EL SERVICIO DE SEÑALES VENCE. PARA CONTINUAR DEBES COMPRAR EL MES . EL VALOR 120.000 PESOS COLOMBIANOS MAS INFORMACION AL WHATSAAP +573114693379',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Container(
-                            margin: const EdgeInsets.only(bottom: 25),
-                            child: GestureDetector(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text(
-                                  'Cerrar',
-                                  style: TextStyle(
-                                    color: Colors.blue,
-                                    decoration: TextDecoration.underline,
-                                    decorationStyle: TextDecorationStyle.double,
-                                  ),
-                                )),
-                          ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 25),
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text(
+                                'Cerrar',
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  decoration: TextDecoration.underline,
+                                  decorationStyle: TextDecorationStyle.double,
+                                ),
+                              )),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
               ));
         });

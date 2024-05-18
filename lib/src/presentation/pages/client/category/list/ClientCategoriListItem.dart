@@ -54,26 +54,70 @@ class ClientCategoriListItem extends StatelessWidget {
   }
 
   Widget _botonActivas(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        bloc?.add(Limpiarlistnotificacion(name: category!.name));
-        Navigator.pushNamed(context, 'client/product/list',
-            arguments: {'estado': "ACTIVO", 'category': category});
-      },
-      child: Text('ACTIVAS',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+    return Row(
+      children: [
+        GestureDetector(
+          onTap: () {
+            bloc?.add(Limpiarlistnotificacion(name: category!.name));
+            Navigator.pushNamed(context, 'client/product/list',
+                arguments: {'estado': "ACTIVO", 'category': category});
+          },
+          child: Text('ACTIVAS',
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        ),
+        Container(
+            width: 20,
+            margin: EdgeInsets.only(top: 10),
+            child: category!.activas! > 0
+                ? AspectRatio(
+                    aspectRatio: 1 / 1,
+                    child: ClipOval(
+                        child: Container(
+                            width: 70,
+                            color: Colors.white,
+                            child: Center(
+                                child: Text(
+                              category!.activas!.toString(),
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            )))))
+                : Container())
+      ],
     );
   }
 
   Widget _botonPendientes(BuildContext context) {
-    return GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, 'client/product/list',
-              arguments: {'estado': "PENDIENTE", 'category': category});
-        },
-        child: Text('PENDIENTE',
-            style:
-                TextStyle(color: Colors.white, fontWeight: FontWeight.bold)));
+    return Row(
+      children: [
+        GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, 'client/product/list',
+                  arguments: {'estado': "PENDIENTE", 'category': category});
+            },
+            child: Text('PENDIENTE',
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold))),
+        Container(
+            width: 20,
+            margin: EdgeInsets.only(top: 10),
+            child: category!.pendientes! > 0
+                ? AspectRatio(
+                    aspectRatio: 1 / 1,
+                    child: ClipOval(
+                        child: Container(
+                            color: Colors.white,
+                            child: Center(
+                                child: Text(
+                              category!.pendientes!.toString(),
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            )))))
+                : Container()),
+      ],
+    );
   }
 
   Widget _botonCerradas(BuildContext context) {
