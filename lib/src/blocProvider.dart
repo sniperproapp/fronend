@@ -5,7 +5,10 @@ import 'package:sniper_pro/src/domain/useCases/auth/AuthUseCases.dart';
 import 'package:sniper_pro/src/domain/useCases/products/ProductsUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/user/UsersUseCases.dart';
 import 'package:sniper_pro/src/domain/useCases/video/VideoUseCases.dart';
+import 'package:sniper_pro/src/domain/useCases/zoom/ZoomUseCases.dart';
 import 'package:sniper_pro/src/presentation/Messaging/bloc/notificationBloc.dart';
+import 'package:sniper_pro/src/presentation/pages/admin/Zoom/list/bloc/AdminZoomListBloc.dart';
+import 'package:sniper_pro/src/presentation/pages/admin/Zoom/update/bloc/AdminZoomUpdateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/category/create/bloc/AdminCategoryCreateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/category/create/bloc/AdminCategoryCreateEvent.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/category/list/bloc/AdminCategoryListBloc.dart';
@@ -32,6 +35,7 @@ import 'package:sniper_pro/src/presentation/pages/client/home/bloc/ClientHomeEve
 import 'package:sniper_pro/src/presentation/pages/client/product/detail/bloc/clientproductdetailBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/client/product/list/bloc/ClientProducListBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/client/videos/bloc/clientvideoBloc.dart';
+import 'package:sniper_pro/src/presentation/pages/client/zoom/bloc/clientZoomBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/category/create/bloc/ProfCategoryCreateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/category/create/bloc/ProfCategoryCreateEvent.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/category/list/bloc/ProfCategoryListBloc.dart';
@@ -129,4 +133,10 @@ List<BlocProvider> blocProviders = [
       create: (context) => ClientRankingListBloc(locator<ProductsUseCase>())),
   BlocProvider<NotificationBloc>(
       create: (context) => NotificationBloc(locator<AuthUseCases>())),
+  BlocProvider<clientZoomBloc>(
+      create: (context) => clientZoomBloc(locator<ZoomUseCases>())),
+  BlocProvider<AdminZoomListBloc>(
+      create: (context) => AdminZoomListBloc(locator<ZoomUseCases>())),
+  BlocProvider<AdminZoomUpdateBloc>(
+      create: (context) => AdminZoomUpdateBloc(locator<ZoomUseCases>())),
 ];

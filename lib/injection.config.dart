@@ -21,13 +21,16 @@ import 'package:sniper_pro/src/data/dataSource/remote/services/UserServices.dart
     as _i13;
 import 'package:sniper_pro/src/data/dataSource/remote/services/VideoServices.dart'
     as _i17;
-import 'package:sniper_pro/src/di/AppModule.dart' as _i19;
+import 'package:sniper_pro/src/data/dataSource/remote/services/ZoomServices.dart'
+    as _i20;
+import 'package:sniper_pro/src/di/AppModule.dart' as _i22;
 import 'package:sniper_pro/src/domain/Repository/AuthRepositry.dart' as _i3;
 import 'package:sniper_pro/src/domain/Repository/CategoryRepository.dart'
     as _i7;
 import 'package:sniper_pro/src/domain/Repository/ProductRepository.dart' as _i9;
 import 'package:sniper_pro/src/domain/Repository/UsersRepository.dart' as _i14;
 import 'package:sniper_pro/src/domain/Repository/VideoRepository.dart' as _i16;
+import 'package:sniper_pro/src/domain/Repository/ZoomRepository.dart' as _i19;
 import 'package:sniper_pro/src/domain/useCases/auth/AuthUseCases.dart' as _i5;
 import 'package:sniper_pro/src/domain/useCases/Categories/CategoriesUseCase.dart'
     as _i6;
@@ -36,6 +39,7 @@ import 'package:sniper_pro/src/domain/useCases/products/ProductsUseCase.dart'
 import 'package:sniper_pro/src/domain/useCases/user/UsersUseCases.dart' as _i15;
 import 'package:sniper_pro/src/domain/useCases/video/VideoUseCases.dart'
     as _i18;
+import 'package:sniper_pro/src/domain/useCases/zoom/ZoomUseCases.dart' as _i21;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -66,8 +70,11 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i16.VideoRepository>(() => appModule.videoRepository);
     gh.factory<_i17.VideoServices>(() => appModule.videoServices);
     gh.factory<_i18.VideoUseCases>(() => appModule.videoUseCases);
+    gh.factory<_i19.ZoomRepository>(() => appModule.zoomRepository);
+    gh.factory<_i20.ZoomServices>(() => appModule.zoomServices);
+    gh.factory<_i21.ZoomUseCases>(() => appModule.zoomUseCases);
     return this;
   }
 }
 
-class _$AppModule extends _i19.AppModule {}
+class _$AppModule extends _i22.AppModule {}

@@ -9,6 +9,7 @@ import 'package:sniper_pro/src/presentation/pages/client/home/bloc/ClientHomeEve
 import 'package:sniper_pro/src/presentation/pages/client/home/bloc/ClientHomeState.dart';
 import 'package:sniper_pro/src/presentation/pages/client/ranking/list/ClientrankingListPage.dart';
 import 'package:sniper_pro/src/presentation/pages/client/videos/ClientvideoPage.dart';
+import 'package:sniper_pro/src/presentation/pages/client/zoom/ClientzoomPage.dart';
 import 'package:sniper_pro/src/presentation/pages/profile/info/ProfileInfoPage.dart';
 import 'package:sniper_pro/src/presentation/pages/roles/RolesPage.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -28,7 +29,8 @@ class _ClientHomePageState extends State<ClientHomePage> {
     ClientrankingListPage(),
     RolesPage(),
     ClientvideoPage(),
-    ClientProductDescargoPage()
+    ClientProductDescargoPage(),
+    ClientzoomPage()
   ];
 
   @override
@@ -181,6 +183,20 @@ class _ClientHomePageState extends State<ClientHomePage> {
                         selected: state.pageIndex == 5,
                         onTap: () {
                           _bloc?.add(ChangeDrawerPage(pageIndex: 5));
+                          Navigator.pop(context);
+                        },
+                      ),
+                      ListTile(
+                        leading: Image.asset(
+                          'assets/img/ICONODESCARGO.png',
+                          width: 25,
+                          height: 25,
+                        ),
+                        title: Text('ZOOM'),
+                        textColor: Colors.blue,
+                        selected: state.pageIndex == 6,
+                        onTap: () {
+                          _bloc?.add(ChangeDrawerPage(pageIndex: 6));
                           Navigator.pop(context);
                         },
                       ),

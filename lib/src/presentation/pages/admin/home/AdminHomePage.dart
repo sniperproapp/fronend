@@ -5,6 +5,7 @@ import 'package:http/http.dart';
 import 'package:sniper_pro/main.dart';
 import 'package:sniper_pro/src/blocProvider.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/LogoutUseCase.dart';
+import 'package:sniper_pro/src/presentation/pages/admin/Zoom/list/AdminZoomListPage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/category/list/AdminCategoryListPage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/home/bloc/AdminHomeBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/home/bloc/AdminHomeEvent.dart';
@@ -34,6 +35,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
     AdminUserListPage(),
     adminreportePage(),
     RolesPage(),
+    AdminZoomListPage()
   ];
 
   onSearch() {
@@ -193,6 +195,21 @@ class _AdminHomePageState extends State<AdminHomePage> {
                     Navigator.pop(context);
                   },
                 ),
+
+                ListTile(
+                  leading: Image.asset(
+                    'assets/img/ICONOROLES.png',
+                    width: 25,
+                    height: 25,
+                  ),
+                  title: Text('Zoom', style: TextStyle(color: Colors.blue)),
+                  selected: state.pageIndex == 5,
+                  onTap: () {
+                    _bloc?.add(AdminChangeDrawerPage(pageIndex: 5));
+                    Navigator.pop(context);
+                  },
+                ),
+
                 ListTile(
                   leading: Image.asset(
                     'assets/img/CERRARSESION.png',

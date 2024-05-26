@@ -9,6 +9,7 @@ import 'package:sniper_pro/injection.dart';
 import 'package:sniper_pro/src/blocProvider.dart';
 import 'package:sniper_pro/src/presentation/Messaging/bloc/notificationBloc.dart';
 import 'package:sniper_pro/src/presentation/local_notification/local_notification.dart';
+import 'package:sniper_pro/src/presentation/pages/admin/Zoom/update/AdminZoomUpdatePage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/category/create/AdminCategoryCreatePage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/category/update/AdminCategoryUpdatePage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/home/AdminHomePage.dart';
@@ -87,6 +88,7 @@ class MyApp extends StatelessWidget {
               ProfCategoryCreatePage(),
           'admin/category/update': (BuildContext context) =>
               AdminCategoryUpdatePage(),
+          'admin/Zoom/update': (BuildContext context) => AdminZoomUpdatePage(),
           'Prof/category/update': (BuildContext context) =>
               ProfCategoryUpdatePage(),
           'admin/product/list': (BuildContext context) => AdminProducListPage(),
