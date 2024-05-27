@@ -134,7 +134,7 @@ class ClientProductListItem extends StatelessWidget {
       decoration: BoxDecoration(
           color: Color.fromRGBO(255, 255, 255, 0.1),
           borderRadius: BorderRadius.all(Radius.circular(35))),
-      width: 310,
+      width: 315,
       margin: EdgeInsets.only(left: 20, right: 10),
       child: Row(
         children: [
@@ -164,7 +164,7 @@ class ClientProductListItem extends StatelessWidget {
               )),
           Container(
             margin: EdgeInsets.only(left: 30),
-            width: 85,
+            width:95,
             height: 25,
             child: product?.tpactivate1 != true
                 ? ElevatedButton(
@@ -277,7 +277,7 @@ class ClientProductListItem extends StatelessWidget {
       decoration: BoxDecoration(
           color: Color.fromRGBO(255, 255, 255, 0.1),
           borderRadius: BorderRadius.all(Radius.circular(35))),
-      width: 310,
+      width: 315,
       margin: EdgeInsets.only(left: 20, right: 10, top: 10, bottom: 10),
       child: Row(
         children: [
@@ -301,7 +301,7 @@ class ClientProductListItem extends StatelessWidget {
               )),
           Container(
             margin: EdgeInsets.only(left: 30),
-            width: 85,
+            width: 95,
             height: 25,
             child: ElevatedButton(
                 onPressed: () {
@@ -329,7 +329,7 @@ class ClientProductListItem extends StatelessWidget {
       decoration: BoxDecoration(
           color: Color.fromRGBO(255, 255, 255, 0.1),
           borderRadius: BorderRadius.all(Radius.circular(35))),
-      width: 310,
+      width: 315,
       margin: EdgeInsets.only(left: 20, right: 10, bottom: 10),
       child: Row(
         children: [
@@ -357,7 +357,7 @@ class ClientProductListItem extends StatelessWidget {
                       fontSize: 13))),
           Container(
               margin: EdgeInsets.only(left: 30),
-              width: 85,
+              width: 95,
               height: 25,
               child: ElevatedButton(
                   onPressed: () {

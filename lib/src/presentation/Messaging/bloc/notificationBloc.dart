@@ -63,12 +63,9 @@ class NotificationBloc extends Bloc<notificationEvent, notificationState> {
     var id = random.nextInt(10000);
 
     LocalNotification.showLocalNotification(id: id, title: title, body: body);
-    var list = await authUseCases.getcategorysession.rum();
-    var indice = list.indexWhere((indice) => indice.name == title);
+     print('entro');
 
-    list[indice].notification = 1;
-
-    await authUseCases.savelistcategory.run(list);
+   
   }
 
   void _onForegrounMessage() {

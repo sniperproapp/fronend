@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAXAvMiowBJmXqRkRKEMh3CwGvnaL1y5qI</string>
+	<string>AIzaSyB7jRqWvEgm_MmBKCeaGoIxuz5xjRQFpX8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>814536037544</string>
+	<string>1062598222598</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.sniperPro</string>
+	<string>com.sniperPro.sniperPro0001</string>
 	<key>PROJECT_ID</key>
-	<string>sniperpro-a9151</string>
+	<string>sniperpro-eaa57</string>
 	<key>STORAGE_BUCKET</key>
-	<string>sniperpro-a9151.appspot.com</string>
+	<string>sniperpro-eaa57.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:814536037544:ios:91832d8bfae0796e879e9d</string>
+	<string>1:1062598222598:ios:0905cc0ce762c0c675f487</string>
 </dict>
 </plist>

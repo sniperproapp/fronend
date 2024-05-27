@@ -306,7 +306,7 @@ class ClientProductDetailContent extends StatelessWidget {
                       'ENTRY:',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 13,
                           color: product?.compventa == "SELL"
                               ? Colors.red
                               : Colors.blue),
@@ -325,7 +325,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     )),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width: 90,
                   height: 25,
                   child: ElevatedButton(
                       onPressed: () {
@@ -362,7 +362,7 @@ class ClientProductDetailContent extends StatelessWidget {
                       'ENTRY:',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 13,
                           color: product?.compventa == "SELL"
                               ? Colors.red
                               : Colors.blue),
@@ -381,7 +381,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     )),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width: 90,
                   height: 25,
                   child: ElevatedButton(
                       onPressed: () {
@@ -418,7 +418,7 @@ class ClientProductDetailContent extends StatelessWidget {
                       'ENTRY:',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 13,
                           color: product?.compventa == "SELL"
                               ? Colors.red
                               : Colors.blue),
@@ -437,7 +437,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     )),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width: 90,
                   height: 25,
                   child: ElevatedButton(
                       onPressed: () {
@@ -491,11 +491,11 @@ class ClientProductDetailContent extends StatelessWidget {
                             '',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                            fontSize: 12,
                             color: Colors.red))),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width:90,
                   height: 25,
                   child: ElevatedButton(
                       onPressed: () {
@@ -550,7 +550,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     )),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width: 90,
                   height: 25,
                   child: product?.tpactivate1 != true
                       ? ElevatedButton(
@@ -612,7 +612,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     )),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width: 90,
                   height: 25,
                   child: product?.tpactivate2 != true
                       ? ElevatedButton(
@@ -629,7 +629,7 @@ class ClientProductDetailContent extends StatelessWidget {
                                   color: product?.compventa == "SELL"
                                       ? Colors.red
                                       : Colors.blue,
-                                  fontSize: 8,
+                                  fontSize: 10,
                                   fontWeight: FontWeight.bold)))
                       : Container(
                           child: Icon(
@@ -675,7 +675,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     )),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width: 90,
                   height: 25,
                   child: product?.tpactivate3 != true
                       ? ElevatedButton(
@@ -740,7 +740,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     )),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width: 90,
                   height: 25,
                   child: product?.tpactivate4 != true
                       ? ElevatedButton(
@@ -805,7 +805,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     )),
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  width: 77,
+                  width: 90,
                   height: 25,
                   child: product?.tpactivate5 != true
                       ? ElevatedButton(
