@@ -200,7 +200,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.tp1.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -220,7 +220,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.tp2.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -240,7 +240,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.tp3.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -260,7 +260,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.tp4.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -280,7 +280,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.tp5.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -352,7 +352,7 @@ class ProfProductUpdateContent extends StatelessWidget {
       validator: (value) {
         return state.name.error;
       },
-      color: Colors.black,
+      color: Colors.white,
     );
   }
 
@@ -367,7 +367,7 @@ class ProfProductUpdateContent extends StatelessWidget {
       validator: (value) {
         return state.description.error;
       },
-      color: Colors.black,
+      color: Colors.white,
     );
   }
 
@@ -386,7 +386,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.price.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -406,7 +406,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.sl.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -426,7 +426,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.price1.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -446,7 +446,7 @@ class ProfProductUpdateContent extends StatelessWidget {
         validator: (value) {
           return state.price2.error;
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
@@ -463,7 +463,7 @@ class ProfProductUpdateContent extends StatelessWidget {
       validator: (value) {
         return state.sl.error;
       },
-      color: Colors.black,
+      color: Colors.white,
     );
   }
 
@@ -473,7 +473,10 @@ class ProfProductUpdateContent extends StatelessWidget {
       margin: EdgeInsets.only(top: 35, left: 10, bottom: 10),
       child: Text(
         'EDITAR SEÑAL',
-        style: TextStyle(fontSize: 17),
+        style: TextStyle(
+          fontSize: 17,
+          color: Colors.white,
+        ),
       ),
     );
   }
@@ -488,10 +491,10 @@ class ProfProductUpdateContent extends StatelessWidget {
             bloc?.add(FormSubmit());
           }
         },
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         child: Icon(
           Icons.check,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
     );
