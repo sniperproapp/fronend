@@ -98,6 +98,19 @@ class ProfProducListItem extends StatelessWidget {
                               ? Colors.blue
                               : Colors.red),
                     )),
+                Container(
+                    child: Checkbox(
+                  checkColor: product?.priceactivate1 == false
+                      ? Colors.red
+                      : Colors.green,
+                  value: product?.priceactivate1,
+                  onChanged: (bool? value) {
+                    bloc?.add(Activatetp1change(id: product!.id!, numero: 8));
+                    Fluttertoast.showToast(
+                        msg: product!.priceactivate1.toString(),
+                        toastLength: Toast.LENGTH_LONG);
+                  },
+                ))
               ],
             ),
           ),
@@ -120,6 +133,16 @@ class ProfProducListItem extends StatelessWidget {
                             color: product?.compventa == 'BUY'
                                 ? Colors.blue
                                 : Colors.red))),
+                Container(
+                    child: Checkbox(
+                  checkColor: product?.priceactivate2 == false
+                      ? Colors.red
+                      : Colors.green,
+                  value: product?.priceactivate2,
+                  onChanged: (bool? value) {
+                    bloc?.add(Activatetp1change(id: product!.id!, numero: 9));
+                  },
+                ))
               ],
             ),
           ),
@@ -142,6 +165,16 @@ class ProfProducListItem extends StatelessWidget {
                             color: product?.compventa == 'BUY'
                                 ? Colors.blue
                                 : Colors.red))),
+                Container(
+                    child: Checkbox(
+                  checkColor: product?.priceactivate3 == false
+                      ? Colors.red
+                      : Colors.green,
+                  value: product?.priceactivate3,
+                  onChanged: (bool? value) {
+                    bloc?.add(Activatetp1change(id: product!.id!, numero: 10));
+                  },
+                ))
               ],
             ),
           ),

@@ -17,6 +17,11 @@ class Product {
   bool? tpactivate3;
   bool? tpactivate4;
   bool? tpactivate5;
+
+  bool? priceactivate1;
+  bool? priceactivate2;
+  bool? priceactivate3;
+
   bool? descarte;
   bool? slactivate;
   String name;
@@ -50,6 +55,9 @@ class Product {
     this.tpactivate3,
     this.tpactivate4,
     this.tpactivate5,
+    this.priceactivate1,
+    this.priceactivate2,
+    this.priceactivate3,
     this.descarte,
     this.slactivate,
     this.estad,
@@ -109,6 +117,15 @@ class Product {
         slactivate: json["slactivate"] is String
             ? bool.parse(json["slactivate"])
             : json["slactivate"],
+        priceactivate1: json["priceactivate1"] is String
+            ? bool.parse(json["priceactivate1"])
+            : json["priceactivate1"],
+        priceactivate2: json["priceactivate2"] is String
+            ? bool.parse(json["priceactivate2"])
+            : json["priceactivate2"],
+        priceactivate3: json["priceactivate3"] is String
+            ? bool.parse(json["priceactivate3"])
+            : json["priceactivate3"],
         descarte: json["descarte"] is String
             ? bool.parse(json["descarte"])
             : json["descarte"],
@@ -196,6 +213,9 @@ class Product {
         "tpactivate3": tpactivate3,
         "tpactivate4": tpactivate4,
         "tpactivate5": tpactivate5,
+        "priceactivate1": priceactivate1,
+        "priceactivate2": priceactivate2,
+        "priceactivate3": priceactivate3,
         "descarte": descarte,
         "slactivate": slactivate,
         "id_category": idCategory,

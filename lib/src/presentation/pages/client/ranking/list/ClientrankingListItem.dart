@@ -24,6 +24,7 @@ class ClientrankingListItem extends StatelessWidget {
                 children: [
                   _imagen(context),
                   _botonganadaperdidas(context),
+                  _puntosganadaperdidas(context),
                   _botonActivas(context),
                   _botonCerradas(context),
                 ],
@@ -48,7 +49,7 @@ class ClientrankingListItem extends StatelessWidget {
   Widget _imagen(BuildContext context) {
     return Center(
       child: Container(
-          width: 80,
+          width: 50,
           child: Column(
             children: [
               AspectRatio(
@@ -68,7 +69,8 @@ class ClientrankingListItem extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                   ))),
-              Text(ranking!.nombre!, style: TextStyle(color: Colors.white)),
+              Text(ranking!.nombre!,
+                  style: TextStyle(color: Colors.white, fontSize: 8)),
             ],
           )),
     );
@@ -84,6 +86,24 @@ class ClientrankingListItem extends StatelessWidget {
               Text('${ranking!.ganadas!}/',
                   style: TextStyle(color: Colors.green)),
               Text(ranking!.perdidas.toString(),
+                  style: TextStyle(color: Colors.red)),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _puntosganadaperdidas(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Text('PG/PP', style: TextStyle(color: Colors.white)),
+          Row(
+            children: [
+              Text('${ranking!.puntosganadas!}/',
+                  style: TextStyle(color: Colors.green)),
+              Text(ranking!.puntosperdidas.toString(),
                   style: TextStyle(color: Colors.red)),
             ],
           )

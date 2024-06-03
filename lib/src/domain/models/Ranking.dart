@@ -2,6 +2,8 @@ class Ranking {
   String? nombre;
   int? ganadas;
   int? perdidas;
+  int? puntosganadas;
+  int? puntosperdidas;
   int? total;
   String? imagen;
 
@@ -9,6 +11,8 @@ class Ranking {
     this.imagen,
     this.nombre,
     this.ganadas,
+    this.puntosganadas,
+    this.puntosperdidas,
     this.perdidas,
     this.total,
   });
@@ -26,6 +30,8 @@ class Ranking {
       nombre: json["nombre"],
       ganadas: json["ganadas"],
       perdidas: json["perdidas"],
+      puntosganadas: json["puntosganadas"],
+      puntosperdidas: json["puntosperdidas"],
       total: json["total"]);
 
   Map<String, dynamic> toJson() => {
@@ -34,5 +40,7 @@ class Ranking {
         "nombre": nombre,
         "ganadas": ganadas,
         "perdidas": perdidas,
+        "puntosganadas": puntosganadas,
+        "puntosperdidas": puntosperdidas,
       };
 }

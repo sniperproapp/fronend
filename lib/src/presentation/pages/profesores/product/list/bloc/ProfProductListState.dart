@@ -10,6 +10,9 @@ class ProfProductListState extends Equatable {
   final bool? activatetp5;
   final bool? descarte;
   final bool? slactivate;
+  final bool? priceactivate1;
+  final bool? priceactivate2;
+  final bool? priceactivate3;
 
   const ProfProductListState(
       {this.response,
@@ -18,6 +21,9 @@ class ProfProductListState extends Equatable {
       this.activatetp3,
       this.activatetp4,
       this.activatetp5,
+      this.priceactivate1,
+      this.priceactivate2,
+      this.priceactivate3,
       this.descarte,
       this.slactivate});
 
@@ -28,6 +34,9 @@ class ProfProductListState extends Equatable {
       bool? activatetp3,
       bool? activatetp4,
       bool? activatetp5,
+      bool? priceactivate1,
+      bool? priceactivate2,
+      bool? priceactivate3,
       bool? descarte,
       bool? slactivate}) {
     return ProfProductListState(
@@ -36,6 +45,10 @@ class ProfProductListState extends Equatable {
         activatetp2: activatetp2,
         activatetp3: activatetp3,
         activatetp4: activatetp4,
+        activatetp5: activatetp5,
+        priceactivate1: priceactivate1,
+        priceactivate2: priceactivate2,
+        priceactivate3: priceactivate3,
         descarte: descarte,
         slactivate: slactivate ?? this.slactivate);
   }
@@ -49,6 +62,9 @@ class ProfProductListState extends Equatable {
         activatetp3,
         activatetp4,
         activatetp5,
+        priceactivate1,
+        priceactivate2,
+        priceactivate3,
         slactivate,
         descarte
       ];
