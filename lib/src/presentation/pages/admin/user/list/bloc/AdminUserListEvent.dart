@@ -32,3 +32,11 @@ class activateuser extends AdminUserListEvent {
   // TODO: implement props
   List<Object?> get props => [id];
 }
+
+class deactivatalleuser extends AdminUserListEvent {
+  const deactivatalleuser();
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}

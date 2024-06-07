@@ -11,6 +11,7 @@ class AdminUserListBloc extends Bloc<AdminUserListEvent, AdminUserListState> {
     on<Getuser>(_ongetuser);
     on<Inactivateuser>(_onInactivateuser);
     on<activateuser>(_onactivate);
+    on<deactivatalleuser>(_ondeactivatalleuser);
   }
 
   Future<void> _ongetuser(
@@ -36,6 +37,15 @@ class AdminUserListBloc extends Bloc<AdminUserListEvent, AdminUserListState> {
     emit(state.copyWith(response: Loading()));
 
     Resource response = await useCases.inactivate.run(event.id);
+
+    emit(state.copyWith(response: response));
+  }
+
+  Future<void> _ondeactivatalleuser(
+      deactivatalleuser event, Emitter<AdminUserListState> emit) async {
+    emit(state.copyWith(response: Loading()));
+
+    Resource response = await useCases.desactivateall.run();
 
     emit(state.copyWith(response: response));
   }

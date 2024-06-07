@@ -38,4 +38,9 @@ class UserRepositoryImpl implements UsersRepository {
   Future<Resource<bool>> inactivateuser(int id) {
     return userServices.updateinactivate(id);
   }
+
+  @override
+  Future<Resource<bool>> desactivateall() {
+    return userServices.desactivateuserall();
+  }
 }

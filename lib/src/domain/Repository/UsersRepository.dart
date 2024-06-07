@@ -8,5 +8,6 @@ abstract class UsersRepository {
   Future<Resource<List<User>>> getUser(String busqueda);
   Future<Resource<bool>> inactivateuser(int id);
   Future<Resource<bool>> activate(int id);
+  Future<Resource<bool>> desactivateall();
   Future<Resource<bool>> descargo(int id);
 }

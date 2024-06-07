@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:path/path.dart';
@@ -20,7 +20,7 @@ class UserServices {
       if (busqueda == '') {
         busqueda = 'allusers';
       }
-      Fluttertoast.showToast(msg: busqueda, toastLength: Toast.LENGTH_LONG);
+
       Uri url = Uri.parse('${ApiConfig.API_ECOMMERCE}/users/$busqueda');
 
       Map<String, String> headers = {
@@ -148,6 +148,28 @@ class UserServices {
   Future<Resource<bool>> updatedescargo(int id) async {
     try {
       Uri url = Uri.parse('${ApiConfig.API_ECOMMERCE}/users/descargo/$id');
+
+      Map<String, String> headers = {
+        "Content-Type": "application/json",
+        "Authorization": await token
+      };
+
+      final response = await http.put(url, headers: headers);
+      final data = json.decode(response.body);
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return Success(true);
+      } else {
+        return Error(ListToString(data['message']));
+      }
+    } catch (e) {
+      print('Error: $e');
+      return Error(e.toString());
+    }
+  }
+
+  Future<Resource<bool>> desactivateuserall() async {
+    try {
+      Uri url = Uri.parse('${ApiConfig.API_ECOMMERCE}/users/desactivate/all');
 
       Map<String, String> headers = {
         "Content-Type": "application/json",

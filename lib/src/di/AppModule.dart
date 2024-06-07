@@ -51,6 +51,7 @@ import 'package:sniper_pro/src/domain/useCases/user/GetUsersUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/user/UpdateUserUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/user/UsersUseCases.dart';
 import 'package:sniper_pro/src/domain/useCases/user/activateuserUseCase.dart';
+import 'package:sniper_pro/src/domain/useCases/user/desactivateuserallUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/user/descargoUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/user/inactivateuserUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/video/GetVideoUseCase.dart';
@@ -128,6 +129,7 @@ abstract class AppModule {
       updateuser: UpdateUserUseCase(userRepository),
       getuser: GetUsersUseCase(userRepository),
       activate: activateuserUseCase(userRepository),
+      desactivateall: desactivateuserallUseCase(userRepository),
       descargo: descargoUseCase(userRepository),
       inactivate: inactivateuserUseCase(userRepository));
 
