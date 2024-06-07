@@ -41,15 +41,17 @@ class ClientProductDescargoContent extends StatelessWidget {
                           bottomRight: Radius.circular(35),
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
-                  child: Column(
-                    children: [
-                      _textname(),
-                      _textparrafo1(context),
-                      _textparrafo2(context),
-                      _textparrafo3(context),
-                      _textparrafo4(context),
-                      _boton(context)
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        _textname(),
+                        _textparrafo1(context),
+                        _textparrafo2(context),
+                        _textparrafo3(context),
+                        _textparrafo4(context),
+                        _boton(context)
+                      ],
+                    ),
                   ),
                 ),
               ),

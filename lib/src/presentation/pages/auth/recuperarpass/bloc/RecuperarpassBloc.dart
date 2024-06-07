@@ -30,7 +30,8 @@ class RecuperarpassBloc extends Bloc<RecuperarpassEvent, RecuperarpassState> {
       RecuperarpassFormSubmit event, Emitter<RecuperarpassState> emit) async {
     emit(state.copywith(response: Loading(), formKey: formKey));
 
-    Resource response = await authUseCases.enviarmail.run(state.email.value);
+    Resource response =
+        await authUseCases.enviarmail.run(state.email.value.trim());
     emit(state.copywith(response: response, formKey: formKey));
   }
 

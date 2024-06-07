@@ -50,7 +50,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       RegisterEmailChanged event, Emitter<RegisterState> emit) async {
     emit(state.copywith(
         email: BlocForItem(
-            value: event.email.value,
+            value: event.email.value.trim(),
             error: event.email.value.isNotEmpty ? null : 'ingresa el email'),
         formKey: formKey));
   }

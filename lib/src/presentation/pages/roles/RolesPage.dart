@@ -25,7 +25,7 @@ class _RolesPageState extends State<RolesPage> {
       listener: (context, state) {
         final responseState = state.response;
         if (responseState is Success) {
-          mostrarCuadroTutorial();
+          // mostrarCuadroTutorial();
           final user = responseState.data as AuthResponse;
 
           if (user.user.mensaje == 1) {}
