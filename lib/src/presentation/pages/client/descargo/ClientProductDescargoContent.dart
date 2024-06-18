@@ -26,37 +26,35 @@ class ClientProductDescargoContent extends StatelessWidget {
             ),
           ),
         ),
-        SingleChildScrollView(
-          child: Column(
-            children: [
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(top: 10, left: 10, right: 10),
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(0, 0, 0, 0.5),
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(35),
-                          bottomRight: Radius.circular(35),
-                          topLeft: Radius.circular(35),
-                          topRight: Radius.circular(35))),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        _textname(),
-                        _textparrafo1(context),
-                        _textparrafo2(context),
-                        _textparrafo3(context),
-                        _textparrafo4(context),
-                        _boton(context)
-                      ],
-                    ),
+        Column(
+          children: [
+            Center(
+              child: Container(
+                margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.6,
+                decoration: BoxDecoration(
+                    color: Color.fromRGBO(0, 0, 0, 0.5),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(35),
+                        bottomRight: Radius.circular(35),
+                        topLeft: Radius.circular(35),
+                        topRight: Radius.circular(35))),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _textname(),
+                      _textparrafo1(context),
+                      _textparrafo2(context),
+                      _textparrafo3(context),
+                      _textparrafo4(context),
+                      _boton(context)
+                    ],
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ],
     );

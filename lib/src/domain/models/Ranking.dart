@@ -2,8 +2,9 @@ class Ranking {
   String? nombre;
   int? ganadas;
   int? perdidas;
-  int? puntosganadas;
-  int? puntosperdidas;
+  double? puntosganadas;
+  double? puntosperdidas;
+
   int? total;
   String? imagen;
 
@@ -30,8 +31,16 @@ class Ranking {
       nombre: json["nombre"],
       ganadas: json["ganadas"],
       perdidas: json["perdidas"],
-      puntosganadas: json["puntosganadas"],
-      puntosperdidas: json["puntosperdidas"],
+      puntosganadas: json["puntosganadas"] is String
+          ? double.parse(json["puntosganadas"])
+          : json["puntosganadas"] is int
+              ? (json["puntosganadas"] as int).toDouble()
+              : json["puntosganadas"],
+      puntosperdidas: json["puntosperdidas"] is String
+          ? double.parse(json["puntosperdidas"])
+          : json["puntosperdidas"] is int
+              ? (json["puntosperdidas"] as int).toDouble()
+              : json["puntosperdidas"],
       total: json["total"]);
 
   Map<String, dynamic> toJson() => {
