@@ -38,7 +38,6 @@ class LoginContent extends StatelessWidget {
                   _botonRegister(context),
                   _botonRecuperarpass(context),
                   _iconredes(context),
-                  _iconredesinst(context)
                 ],
               ),
             ),
@@ -217,10 +216,10 @@ class LoginContent extends StatelessWidget {
           child: IconButton(
             onPressed: () {
               launchUrl(Uri.parse(
-                  "https://track.deriv.com/_kQiHwaQEDiUv_52HWb4YL2Nd7ZgqdRLk/1/"));
+                  "https://www.instagram.com/miguelmonsalve_fx_lamaquina?utm_source=ig_web_button_share_sheet&igsh=ODdmZWVhMTFiMw=="));
             },
             icon: Image.asset(
-              'assets/img/deriv.png',
+              'assets/img/INSTAGRAM.png',
               fit: BoxFit.cover,
             ),
           ),

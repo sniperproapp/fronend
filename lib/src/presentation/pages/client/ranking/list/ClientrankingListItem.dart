@@ -24,7 +24,7 @@ class ClientrankingListItem extends StatelessWidget {
                 children: [
                   _imagen(context),
                   _botonganadaperdidas(context),
-                  _puntosganadaperdidas(context),
+                  // _puntosganadaperdidas(context),
                   _botonActivas(context),
                   _botonCerradas(context),
                 ],
