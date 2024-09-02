@@ -69,7 +69,7 @@ SfCartesianChart _buildTrackerColumnChart(
     primaryXAxis: const CategoryAxis(majorGridLines: MajorGridLines(width: 0)),
     primaryYAxis: const NumericAxis(
         minimum: 0,
-        maximum: 100,
+        maximum: 500,
         axisLine: AxisLine(width: 0),
         majorGridLines: MajorGridLines(width: 0),
         majorTickLines: MajorTickLines(size: 0)),

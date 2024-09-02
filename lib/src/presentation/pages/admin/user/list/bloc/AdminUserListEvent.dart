@@ -26,7 +26,8 @@ class Inactivateuser extends AdminUserListEvent {
 
 class activateuser extends AdminUserListEvent {
   final int id;
-  const activateuser({required this.id});
+  final String timeLimit;
+  const activateuser({required this.id, required this.timeLimit});
 
   @override
   // TODO: implement props

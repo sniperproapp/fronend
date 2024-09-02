@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sniper_pro/src/domain/models/User.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/user/list/bloc/AdminUserListBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/user/list/bloc/AdminUserListEvent.dart';
@@ -31,7 +32,7 @@ class AdminUserListItem extends StatelessWidget {
           children: [
             Spacer(),
             Text(
-              user?.estado == 1 ? 'Activo' : 'inactivo',
+              user?.estado == 1 ? 'Activo' : 'Inactivo',
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -43,9 +44,22 @@ class AdminUserListItem extends StatelessWidget {
         trailing: Wrap(direction: Axis.horizontal, children: [
           IconButton(
               onPressed: () {
-                bloc?.add(activateuser(id: user!.id!));
+                showDatePicker(
+                        context: context,
+                        initialDate: DateTime.parse(user!.timeLimit.toString()),
+                        firstDate: DateTime(DateTime.now().year),
+                        lastDate: DateTime(DateTime.now().year + 1))
+                    .then((value) {
+                  if (value?.day != null) {
+                    if (user!.timeLimit.toString().split('T')[0] !=
+                        value.toString().split(' ')[0]) {
+                      bloc?.add(activateuser(
+                          id: user!.id!, timeLimit: value.toString()));
+                    }
+                  }
+                });
               },
-              icon: Icon(Icons.add_task)),
+              icon: Icon(Icons.calendar_month)),
           IconButton(
               onPressed: () {
                 bloc?.add(Inactivateuser(id: user!.id!));

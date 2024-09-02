@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sniper_pro/src/domain/useCases/user/UsersUseCases.dart';
 import 'package:sniper_pro/src/presentation/Utils/Resource.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/user/list/bloc/AdminUserListEvent.dart';
@@ -25,9 +26,7 @@ class AdminUserListBloc extends Bloc<AdminUserListEvent, AdminUserListState> {
 
   Future<void> _onactivate(
       activateuser event, Emitter<AdminUserListState> emit) async {
-    emit(state.copyWith(response: Loading()));
-
-    Resource response = await useCases.activate.run(event.id);
+    Resource response = await useCases.activate.run(event.id, event.timeLimit);
 
     emit(state.copyWith(response: response));
   }
@@ -37,7 +36,7 @@ class AdminUserListBloc extends Bloc<AdminUserListEvent, AdminUserListState> {
     emit(state.copyWith(response: Loading()));
 
     Resource response = await useCases.inactivate.run(event.id);
-
+    await Future.delayed(Duration(seconds: 3));
     emit(state.copyWith(response: response));
   }
 

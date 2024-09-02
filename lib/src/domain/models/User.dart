@@ -12,23 +12,24 @@ class User {
   String? password;
   String? notificationToken;
   String? imagen;
+  String? timeLimit;
 
   List<Role>? roles;
 
-  User({
-    this.id,
-    this.estado,
-    this.descargo,
-    this.mensaje,
-    required this.name,
-    required this.lastname,
-    this.email,
-    required this.phone,
-    this.password,
-    this.notificationToken,
-    this.imagen,
-    this.roles,
-  });
+  User(
+      {this.id,
+      this.estado,
+      this.descargo,
+      this.mensaje,
+      required this.name,
+      required this.lastname,
+      this.email,
+      required this.phone,
+      this.password,
+      this.notificationToken,
+      this.imagen,
+      this.roles,
+      this.timeLimit});
   static List<User> fromJsonList(List<dynamic> jsonList) {
     List<User> toList = [];
     jsonList.forEach((item) {
@@ -44,6 +45,7 @@ class User {
         descargo: json["descargo"] ?? 0,
         mensaje: json["mensaje"] ?? 0,
         name: json["name"],
+        timeLimit: json["time_limit"],
         lastname: json["lastname"],
         email: json["email"],
         phone: json["phone"],
@@ -67,6 +69,7 @@ class User {
         "notification_token": notificationToken,
         "imagen": imagen,
         "password": password,
+        "time_limit": timeLimit,
         "roles": roles != null
             ? List<dynamic>.from(roles!.map((x) => x.toJson()))
             : [],

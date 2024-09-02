@@ -25,8 +25,8 @@ class UserRepositoryImpl implements UsersRepository {
   }
 
   @override
-  Future<Resource<bool>> activate(int id) {
-    return userServices.updateactivate(id);
+  Future<Resource<bool>> activate(int id, String timeLimit) {
+    return userServices.updateactivate(id, timeLimit);
   }
 
   @override

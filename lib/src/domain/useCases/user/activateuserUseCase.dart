@@ -4,5 +4,5 @@ class activateuserUseCase {
   UsersRepository usersRepository;
   activateuserUseCase(this.usersRepository);
 
-  run(int id) => usersRepository.activate(id);
+  run(int id, String timeLimit) => usersRepository.activate(id, timeLimit);
 }

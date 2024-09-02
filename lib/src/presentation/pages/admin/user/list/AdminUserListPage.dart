@@ -19,6 +19,7 @@ class AdminUserListPage extends StatefulWidget {
 
 class _AdminUserListPageState extends State<AdminUserListPage> {
   AdminUserListBloc? _bloc;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -30,15 +31,17 @@ class _AdminUserListPageState extends State<AdminUserListPage> {
 
   Widget build(BuildContext context) {
     _bloc = BlocProvider.of<AdminUserListBloc>(context);
-
+    final now = DateTime.now();
     return Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () => showDialog(
               context: context,
               builder: (BuildContext context) => AlertDialog(
                     title: const Text('DESACTIVAR A TODOS'),
-                    content: const Text(
-                        'Presionando si desactivara a todos los usuarios'),
+                    content: Text(
+                        'Seran desactivados todos los usuarios con fecha de corte  0' +
+                            now.month.toString() +
+                            '/05'),
                     actions: <Widget>[
                       TextButton(
                         onPressed: () => Navigator.pop(context, 'Cancel'),
@@ -63,7 +66,7 @@ class _AdminUserListPageState extends State<AdminUserListPage> {
           ),
         ),
         body: BlocListener<AdminUserListBloc, AdminUserListState>(
-          listener: (context, state) {
+          listener: (context, state) async {
             final responseState = state.response;
             if (responseState is Success) {
               if (responseState.data is bool) {

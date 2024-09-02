@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:path/path.dart';
@@ -123,7 +124,7 @@ class UserServices {
     }
   }
 
-  Future<Resource<bool>> updateactivate(int id) async {
+  Future<Resource<bool>> updateactivate(int id, String timeLimit) async {
     try {
       Uri url = Uri.parse('${ApiConfig.API_ECOMMERCE}/users/activate/$id');
 
@@ -131,8 +132,9 @@ class UserServices {
         "Content-Type": "application/json",
         "Authorization": await token
       };
+      String body = json.encode({'timelimit': timeLimit});
 
-      final response = await http.put(url, headers: headers);
+      final response = await http.put(url, headers: headers, body: body);
       final data = json.decode(response.body);
       if (response.statusCode == 200 || response.statusCode == 201) {
         return Success(true);
