@@ -12,7 +12,7 @@ class User {
   String? password;
   String? notificationToken;
   String? imagen;
-  String? timeLimit;
+  String? time_limit;
 
   List<Role>? roles;
 
@@ -29,7 +29,7 @@ class User {
       this.notificationToken,
       this.imagen,
       this.roles,
-      this.timeLimit});
+      this.time_limit});
   static List<User> fromJsonList(List<dynamic> jsonList) {
     List<User> toList = [];
     jsonList.forEach((item) {
@@ -45,7 +45,7 @@ class User {
         descargo: json["descargo"] ?? 0,
         mensaje: json["mensaje"] ?? 0,
         name: json["name"],
-        timeLimit: json["time_limit"],
+        time_limit: json["time_limit"],
         lastname: json["lastname"],
         email: json["email"],
         phone: json["phone"],
@@ -69,7 +69,7 @@ class User {
         "notification_token": notificationToken,
         "imagen": imagen,
         "password": password,
-        "time_limit": timeLimit,
+        "time_limit": time_limit,
         "roles": roles != null
             ? List<dynamic>.from(roles!.map((x) => x.toJson()))
             : [],

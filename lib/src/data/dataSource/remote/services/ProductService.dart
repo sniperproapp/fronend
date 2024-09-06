@@ -144,8 +144,7 @@ class ProductService {
 
       final request = http.MultipartRequest('POST', url);
       final DateTime now = DateTime.now();
-      final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm a');
-      final String formatted = formatter.format(now);
+
       request.headers['Authorization'] = await token;
       request.headers['Content-Type'] = 'multipart/form-data';
       request.headers['Accept'] = '*/*';
@@ -175,7 +174,6 @@ class ProductService {
 
       request.fields['id_user'] = product.iduser.toString();
       request.fields['like'] = '0';
-      request.fields['fecha'] = formatted;
 
       final response = await request.send();
       final data =

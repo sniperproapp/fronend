@@ -46,12 +46,13 @@ class AdminUserListItem extends StatelessWidget {
               onPressed: () {
                 showDatePicker(
                         context: context,
-                        initialDate: DateTime.parse(user!.timeLimit.toString()),
+                        initialDate:
+                            DateTime.parse(user!.time_limit.toString()),
                         firstDate: DateTime(DateTime.now().year),
                         lastDate: DateTime(DateTime.now().year + 1))
                     .then((value) {
                   if (value?.day != null) {
-                    if (user!.timeLimit.toString().split('T')[0] !=
+                    if (user!.time_limit.toString().split('T')[0] !=
                         value.toString().split(' ')[0]) {
                       bloc?.add(activateuser(
                           id: user!.id!, timeLimit: value.toString()));

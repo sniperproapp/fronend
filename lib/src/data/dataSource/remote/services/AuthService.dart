@@ -103,6 +103,8 @@ class AuthService {
 
       user.estado = 0;
       user.mensaje = 0;
+      user.time_limit = "";
+
       user.imagen =
           'https://firebasestorage.googleapis.com/v0/b/sniperpro-a9151.appspot.com/o/user_image.png?alt=media&token=54be3aec-fa14-419a-8f1a-c5f350ed7531';
       Uri url = Uri.parse('${ApiConfig.API_ECOMMERCE}/auth/register');
