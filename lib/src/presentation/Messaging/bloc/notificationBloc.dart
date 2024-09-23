@@ -8,12 +8,7 @@ import 'package:sniper_pro/src/presentation/Messaging/bloc/notificationEvent.dar
 import 'package:sniper_pro/src/presentation/Messaging/bloc/notificationState.dart';
 import 'package:equatable/equatable.dart';
 import 'package:sniper_pro/src/presentation/local_notification/local_notification.dart';
-
-class NotificationBloc extends Bloc<notificationEvent, notificationState> {
-  FirebaseMessaging messaging = FirebaseMessaging.instance;
-  AuthUseCases authUseCases;
-  NotificationBloc(this.authUseCases) : super(notificationState()) {
-    Future<void> firebaseMessagingBackgroundHandler(
+Future<void> firebaseMessagingBackgroundHandler(
         RemoteMessage message) async {
       var mensaje = message.data;
       var body = mensaje['body'];
@@ -21,8 +16,16 @@ class NotificationBloc extends Bloc<notificationEvent, notificationState> {
       Random random = Random();
       var id = random.nextInt(10000);
       LocalNotification.showLocalNotification(
-          id: id, title: 'appcerrada', body: 'app cerrada');
+          id: id, title: title, body: body);
     }
+
+class NotificationBloc extends Bloc<notificationEvent, notificationState> {
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  AuthUseCases authUseCases;
+
+ 
+  NotificationBloc(this.authUseCases) : super(notificationState()) {
+    
 
     _onForegrounMessage();
   }

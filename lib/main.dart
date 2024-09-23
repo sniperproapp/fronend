@@ -43,13 +43,13 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+ 
   await configureDependencies();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
   await LocalNotification.initializeLocalNotificatio();
 
   runApp(const MyApp());
