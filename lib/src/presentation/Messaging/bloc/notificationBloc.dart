@@ -2,11 +2,9 @@ import 'dart:math';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/AuthUseCases.dart';
 import 'package:sniper_pro/src/presentation/Messaging/bloc/notificationEvent.dart';
 import 'package:sniper_pro/src/presentation/Messaging/bloc/notificationState.dart';
-import 'package:equatable/equatable.dart';
 import 'package:sniper_pro/src/presentation/local_notification/local_notification.dart';
 Future<void> firebaseMessagingBackgroundHandler(
         RemoteMessage message) async {

@@ -171,6 +171,7 @@ class ProductService {
       request.fields['estad'] = product.estad.toString();
       request.fields['description'] = product.description;
       request.fields['id_category'] = product.idCategory.toString();
+      request.fields['fecha'] = now.toString();
 
       request.fields['id_user'] = product.iduser.toString();
       request.fields['like'] = '0';
