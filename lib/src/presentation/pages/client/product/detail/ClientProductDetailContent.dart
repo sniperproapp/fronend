@@ -46,7 +46,7 @@ class ClientProductDetailContent extends StatelessWidget {
                   _textDescription(),
                   _texttp(),
                   Container(
-                      height: 220,
+                      height: 300,
                       child: Column(
                         children: [
                           _tp1(),
@@ -213,7 +213,7 @@ class ClientProductDetailContent extends StatelessWidget {
                     color: Colors.white),
               )),
           Container(
-              width: 253,
+              width: 200,
               margin: EdgeInsets.only(left: 10),
               child: Text(
                 product?.description ?? '',
@@ -324,24 +324,21 @@ class ClientProductDetailContent extends StatelessWidget {
                               : Colors.blue),
                     )),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width: 90,
-                  height: 25,
-                  child: ElevatedButton(
-                      onPressed: () {
+                   height: 30,
+                  child:  
+                       IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 25,
+                        color: Colors.white,
+                      ),
+                       onPressed: () {
                         Fluttertoast.showToast(
                             msg: 'copiado', toastLength: Toast.LENGTH_LONG);
                         Clipboard.setData(ClipboardData(
                             text: product?.price2.toString() ?? ''));
-                      },
-                      child: Text("copiar",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: product?.compventa == "SELL"
-                                ? Colors.red
-                                : Colors.blue,
-                            fontSize: 10,
-                          ))),
+                      },)
+                      
+                        
                 )
               ],
             ),
@@ -380,24 +377,20 @@ class ClientProductDetailContent extends StatelessWidget {
                               : Colors.blue),
                     )),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width: 90,
+                 
                   height: 25,
-                  child: ElevatedButton(
+                  child: IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 25,
+                        color: Colors.white,
+                      ),
                       onPressed: () {
                         Fluttertoast.showToast(
                             msg: 'copiado', toastLength: Toast.LENGTH_LONG);
                         Clipboard.setData(ClipboardData(
                             text: product?.price1.toString() ?? ''));
                       },
-                      child: Text("copiar",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: product?.compventa == "SELL"
-                                ? Colors.red
-                                : Colors.blue,
-                            fontSize: 10,
-                          ))),
+                     ),
                 )
               ],
             ),
@@ -436,10 +429,13 @@ class ClientProductDetailContent extends StatelessWidget {
                               : Colors.blue),
                     )),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width: 90,
+                  
                   height: 25,
-                  child: ElevatedButton(
+                  child: IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 25,
+                        color: Colors.white,
+                      ),
                       onPressed: () {
                         Fluttertoast.showToast(
                             msg: 'copiado', toastLength: Toast.LENGTH_LONG);
@@ -447,14 +443,7 @@ class ClientProductDetailContent extends StatelessWidget {
                           ClipboardData(text: product?.price.toString() ?? ''),
                         );
                       },
-                      child: Text("copiar",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: product?.compventa == "SELL"
-                                ? Colors.red
-                                : Colors.blue,
-                            fontSize: 10,
-                          ))),
+                      ),
                 )
               ],
             ),
@@ -494,21 +483,20 @@ class ClientProductDetailContent extends StatelessWidget {
                             fontSize: 12,
                             color: Colors.red))),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width:90,
-                  height: 25,
-                  child: ElevatedButton(
+                  
+                    height: 25,
+                  child: IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 25,
+                        color: Colors.white,
+                      ),
                       onPressed: () {
                         Fluttertoast.showToast(
                             msg: 'copiado', toastLength: Toast.LENGTH_LONG);
                         Clipboard.setData(
                             ClipboardData(text: product?.sl.toString() ?? ''));
                       },
-                      child: Text("copiar",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.red,
-                              fontSize: 10))),
+                      ),
                 )
               ],
             ),
@@ -549,11 +537,15 @@ class ClientProductDetailContent extends StatelessWidget {
                           color: Colors.green),
                     )),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width: 90,
-                  height: 25,
+                  
+                  height: 30,
                   child: product?.tpactivate1 != true
-                      ? ElevatedButton(
+                      ? 
+                      IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 20,
+                        color: Colors.white,
+                      ),
                           onPressed: () {
                             Clipboard.setData(
                               ClipboardData(
@@ -562,13 +554,7 @@ class ClientProductDetailContent extends StatelessWidget {
                             Fluttertoast.showToast(
                                 msg: 'copiado', toastLength: Toast.LENGTH_LONG);
                           },
-                          child: Text("copiar",
-                              style: TextStyle(
-                                  color: product?.compventa == "SELL"
-                                      ? Colors.red
-                                      : Colors.blue,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold)))
+                          )
                       : Container(
                           child: Icon(
                           Icons.check,
@@ -611,11 +597,15 @@ class ClientProductDetailContent extends StatelessWidget {
                           fontWeight: FontWeight.bold, color: Colors.green),
                     )),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width: 90,
-                  height: 25,
+                
+                 
+                  height:30,
                   child: product?.tpactivate2 != true
-                      ? ElevatedButton(
+                      ? IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 20,
+                        color: Colors.white,
+                      ),
                           onPressed: () {
                             Clipboard.setData(
                               ClipboardData(
@@ -624,13 +614,7 @@ class ClientProductDetailContent extends StatelessWidget {
                             Fluttertoast.showToast(
                                 msg: 'copiado', toastLength: Toast.LENGTH_LONG);
                           },
-                          child: Text("copiar",
-                              style: TextStyle(
-                                  color: product?.compventa == "SELL"
-                                      ? Colors.red
-                                      : Colors.blue,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold)))
+                           )
                       : Container(
                           child: Icon(
                           Icons.check,
@@ -674,11 +658,15 @@ class ClientProductDetailContent extends StatelessWidget {
                           color: Colors.green),
                     )),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width: 90,
-                  height: 25,
+                   
+                  
+                  height: 30,
                   child: product?.tpactivate3 != true
-                      ? ElevatedButton(
+                      ? IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 20,
+                        color: Colors.white,
+                      ),
                           onPressed: () {
                             Clipboard.setData(
                               ClipboardData(
@@ -687,13 +675,7 @@ class ClientProductDetailContent extends StatelessWidget {
                             Fluttertoast.showToast(
                                 msg: 'copiado', toastLength: Toast.LENGTH_LONG);
                           },
-                          child: Text("copiar",
-                              style: TextStyle(
-                                  color: product?.compventa == "SELL"
-                                      ? Colors.red
-                                      : Colors.blue,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold)))
+                          )
                       : Container(
                           child: Icon(
                           Icons.check,
@@ -739,11 +721,15 @@ class ClientProductDetailContent extends StatelessWidget {
                           color: Colors.green),
                     )),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width: 90,
-                  height: 25,
+                  
+                
+                  height: 30,
                   child: product?.tpactivate4 != true
-                      ? ElevatedButton(
+                      ? IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 20,
+                        color: Colors.white,
+                      ),
                           onPressed: () {
                             Clipboard.setData(
                               ClipboardData(
@@ -752,13 +738,7 @@ class ClientProductDetailContent extends StatelessWidget {
                             Fluttertoast.showToast(
                                 msg: 'copiado', toastLength: Toast.LENGTH_LONG);
                           },
-                          child: Text("copiar",
-                              style: TextStyle(
-                                  color: product?.compventa == "SELL"
-                                      ? Colors.red
-                                      : Colors.blue,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold)))
+                           )
                       : Container(
                           child: Icon(
                           Icons.check,
@@ -804,11 +784,15 @@ class ClientProductDetailContent extends StatelessWidget {
                           color: Colors.green),
                     )),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
-                  width: 90,
-                  height: 25,
+               
+                  
+                  height: 30,
                   child: product?.tpactivate5 != true
-                      ? ElevatedButton(
+                      ? IconButton(icon: Icon(
+                        Icons.copy_rounded,
+                        size: 20,
+                        color: Colors.white,
+                      ),
                           onPressed: () {
                             Clipboard.setData(
                               ClipboardData(
@@ -817,13 +801,7 @@ class ClientProductDetailContent extends StatelessWidget {
                             Fluttertoast.showToast(
                                 msg: 'copiado', toastLength: Toast.LENGTH_LONG);
                           },
-                          child: Text("copiar",
-                              style: TextStyle(
-                                  color: product?.compventa == "SELL"
-                                      ? Colors.red
-                                      : Colors.blue,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold)))
+                          )
                       : Container(
                           child: Icon(
                           Icons.check,
