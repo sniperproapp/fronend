@@ -91,7 +91,7 @@ class ClientProductListItem extends StatelessWidget {
                   child: Text(
                     product?.fecha ?? '',
                     style: TextStyle(
-                        fontSize: 10,
+                        fontSize: 8,
                         fontWeight: FontWeight.bold,
                         color: product?.compventa == "SELL"
                             ? Colors.red

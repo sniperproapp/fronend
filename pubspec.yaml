@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.22
+version: 1.0.24
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
@@ -48,7 +48,11 @@ dependencies:
   http_parser: ^4.0.2
   flutter_image_slideshow: ^0.1.6
   firebase_messaging: ^14.7.19
-  syncfusion_flutter_charts: ^24.2.4+3
+  syncfusion_flutter_charts:
+    git:
+      url: https://github.com/Luvti/flutter-widgets
+      path: packages/syncfusion_flutter_charts
+      ref: 15e3c4a95e3cf2e2393755bf5aa11c0206ed6dea #flutter/3.24
   firebase_core: ^2.27.0
   flutter_local_notifications: ^16.3.2
   video_player: ^2.8.3
