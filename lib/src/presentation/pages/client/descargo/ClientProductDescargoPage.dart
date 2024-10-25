@@ -52,8 +52,8 @@ class _ClientProductDescargoPageState extends State<ClientProductDescargoPage> {
           _bloc?.add(cambiarvalordescargouser());
 
           await Future.delayed(Duration(seconds: 2));
-          // ignore: use_build_context_synchronously
-           // context.read<ClientHomeBloc>().add(clientInfoGetUser());
+          
+            context.read<ClientHomeBloc>().add(clientInfoGetUser());
         }
       },
       child: BlocBuilder<clientproductdescargoBloc, clientproducdescargoState>(

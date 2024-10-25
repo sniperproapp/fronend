@@ -61,7 +61,7 @@ class AdminZoomUpdateContent extends StatelessWidget {
       },
       child: Container(
         width: 150,
-        margin: EdgeInsets.only(top: 100),
+        margin: EdgeInsets.only(top: 90),
         child: AspectRatio(
           aspectRatio: 1 / 1,
           child: ClipOval(
@@ -89,7 +89,7 @@ class AdminZoomUpdateContent extends StatelessWidget {
   Widget _cardCategoriForm(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.48,
+      height: MediaQuery.of(context).size.height * 0.60,
       decoration: BoxDecoration(
           color: Color.fromRGBO(0, 0, 0, 0.4),
           borderRadius: BorderRadius.only(

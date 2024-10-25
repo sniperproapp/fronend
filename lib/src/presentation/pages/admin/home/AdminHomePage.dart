@@ -10,6 +10,7 @@ import 'package:sniper_pro/src/presentation/pages/admin/category/list/AdminCateg
 import 'package:sniper_pro/src/presentation/pages/admin/home/bloc/AdminHomeBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/home/bloc/AdminHomeEvent.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/home/bloc/AdminHomeState.dart';
+import 'package:sniper_pro/src/presentation/pages/admin/mensajes/create/AdminMensajeCreatePage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/product/list/AdminProducListPage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/reporte/adminreportePage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/user/list/AdminUserListPage.dart';
@@ -35,7 +36,8 @@ class _AdminHomePageState extends State<AdminHomePage> {
     AdminUserListPage(),
     adminreportePage(),
     RolesPage(),
-    AdminZoomListPage()
+    AdminZoomListPage(),
+    AdminMensajeCreatePage()
   ];
 
   onSearch() {
@@ -206,6 +208,20 @@ class _AdminHomePageState extends State<AdminHomePage> {
                   selected: state.pageIndex == 5,
                   onTap: () {
                     _bloc?.add(AdminChangeDrawerPage(pageIndex: 5));
+                    Navigator.pop(context);
+                  },
+                ),
+                
+                ListTile(
+                  leading: Image.asset(
+                    'assets/img/ICONOROLES.png',
+                    width: 25,
+                    height: 25,
+                  ),
+                  title: Text('MENSAJES', style: TextStyle(color: Colors.blue)),
+                  selected: state.pageIndex == 6,
+                  onTap: () {
+                    _bloc?.add(AdminChangeDrawerPage(pageIndex: 6));
                     Navigator.pop(context);
                   },
                 ),

@@ -5,4 +5,4 @@ import 'package:sniper_pro/injection.config.dart';
 final locator = GetIt.instance;
 
 @InjectableInit()
-Future<void> configureDependencies() async => await locator.init();
+Future<void> configureDependencies() async =>   locator.init();

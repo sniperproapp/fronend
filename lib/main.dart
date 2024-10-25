@@ -3,7 +3,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'dart:math';
 
 import 'package:sniper_pro/injection.dart';
 import 'package:sniper_pro/src/blocProvider.dart';
@@ -37,8 +36,7 @@ import 'package:sniper_pro/src/presentation/pages/profesores/product/update/Prof
 import 'package:sniper_pro/src/presentation/pages/profile/info/ProfileInfoPage.dart';
 import 'package:sniper_pro/src/presentation/pages/profile/update/ProfileUpdatePage.dart';
 import 'package:sniper_pro/src/presentation/pages/roles/RolesPage.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:sniper_pro/src/presentation/services/push_notification.dart';
+
 import 'firebase_options.dart';
 
 void main() async {

@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:sniper_pro/src/data/dataSource/local/SharedPref.dart';
 import 'package:sniper_pro/src/data/dataSource/remote/services/CategoryService.dart';
+import 'package:sniper_pro/src/data/dataSource/remote/services/MensajeServices.dart';
 import 'package:sniper_pro/src/data/dataSource/remote/services/ProductService.dart';
 import 'package:sniper_pro/src/data/dataSource/remote/services/UserServices.dart';
 import 'package:sniper_pro/src/data/dataSource/remote/services/VideoServices.dart';
@@ -8,12 +9,14 @@ import 'package:sniper_pro/src/data/dataSource/remote/services/ZoomServices.dart
 import 'package:sniper_pro/src/data/repository/AuthRepositoryImpl.dart';
 import 'package:sniper_pro/src/data/dataSource/remote/services/AuthService.dart';
 import 'package:sniper_pro/src/data/repository/CategoryRepositoryImp.dart';
+import 'package:sniper_pro/src/data/repository/MensajeRepositoryImpl.dart';
 import 'package:sniper_pro/src/data/repository/ProductRepositoryImp.dart';
 import 'package:sniper_pro/src/data/repository/UserRepositoryImpl.dart';
 import 'package:sniper_pro/src/data/repository/VideoRepositoryImpl.dart';
 import 'package:sniper_pro/src/data/repository/ZoomRepositoryImpl.dart';
 import 'package:sniper_pro/src/domain/Repository/AuthRepositry.dart';
 import 'package:sniper_pro/src/domain/Repository/CategoryRepository.dart';
+import 'package:sniper_pro/src/domain/Repository/MensajeRepository.dart';
 import 'package:sniper_pro/src/domain/Repository/ProductRepository.dart';
 import 'package:sniper_pro/src/domain/Repository/UsersRepository.dart';
 import 'package:sniper_pro/src/domain/Repository/VideoRepository.dart';
@@ -35,6 +38,8 @@ import 'package:sniper_pro/src/domain/useCases/auth/RegisterUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/SaveCategorySessionUserCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/SaveUserSessionUserCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/SaveUsertokenmessageCase.dart';
+import 'package:sniper_pro/src/domain/useCases/mensaje/MensajeUseCases.dart';
+import 'package:sniper_pro/src/domain/useCases/mensaje/PostMensajeUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/products/CreateProductUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/products/DeleteProductUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/products/GetProducrankingUseCase.dart';
@@ -81,6 +86,21 @@ abstract class AppModule {
 
   @Injectable()
   UserServices get userServices => UserServices(token);
+
+  @Injectable()
+  MensajeServices get mensajeServices => MensajeServices(token);
+
+
+@Injectable()
+  MensajeRepository get mensajeRepository => MensajeRepositoryImpl(mensajeServices);
+
+
+@Injectable()
+  MensajeUseCases get mensajeUseCases => MensajeUseCases(
+      post: PostMensajeUseCase(mensajeRepository));
+
+
+
 
   @Injectable()
   ZoomServices get zoomServices => ZoomServices(token);

@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sniper_pro/injection.dart';
 import 'package:sniper_pro/src/domain/useCases/Categories/CategoriesUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/auth/AuthUseCases.dart';
+import 'package:sniper_pro/src/domain/useCases/mensaje/MensajeUseCases.dart';
+ 
 import 'package:sniper_pro/src/domain/useCases/products/ProductsUseCase.dart';
 import 'package:sniper_pro/src/domain/useCases/user/UsersUseCases.dart';
 import 'package:sniper_pro/src/domain/useCases/video/VideoUseCases.dart';
@@ -15,6 +17,7 @@ import 'package:sniper_pro/src/presentation/pages/admin/category/list/bloc/Admin
 import 'package:sniper_pro/src/presentation/pages/admin/category/update/bloc/AdminCategoryUpdateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/home/bloc/AdminHomeBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/home/bloc/AdminHomeEvent.dart';
+import 'package:sniper_pro/src/presentation/pages/admin/mensajes/create/bloc/AdminMensajeCreateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/product/create/bloc/AdminProductCreateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/product/list/bloc/AdminProducListBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/product/update/bloc/AdminProductUpdateBloc.dart';
@@ -135,8 +138,11 @@ List<BlocProvider> blocProviders = [
       create: (context) => NotificationBloc(locator<AuthUseCases>())),
   BlocProvider<clientZoomBloc>(
       create: (context) => clientZoomBloc(locator<ZoomUseCases>())),
+
   BlocProvider<AdminZoomListBloc>(
       create: (context) => AdminZoomListBloc(locator<ZoomUseCases>())),
   BlocProvider<AdminZoomUpdateBloc>(
       create: (context) => AdminZoomUpdateBloc(locator<ZoomUseCases>())),
+  BlocProvider<AdminMensajeCreateBloc>(
+      create: (context) => AdminMensajeCreateBloc(locator<MensajeUseCases>())),
 ];
