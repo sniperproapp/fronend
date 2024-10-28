@@ -1,6 +1,5 @@
 import 'dart:convert';
 // ignore: depend_on_referenced_packages
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
