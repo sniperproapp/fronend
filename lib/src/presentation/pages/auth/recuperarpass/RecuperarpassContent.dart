@@ -59,9 +59,7 @@ class RecuperarpassContent extends StatelessWidget {
                           bloc?.add(RecuperarpassEmailChanged(
                               email: BlocForItem(value: text)));
                         },
-                        validator: (value) {
-                          return state.email.error;
-                        },
+                        
                       ),
                     ),
                     Container(

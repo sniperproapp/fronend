@@ -534,6 +534,7 @@ class ProfProductCreateContent extends StatelessWidget {
       child: FloatingActionButton(
         onPressed: () {
           if (state.formKey!.currentState!.validate()) {
+            
             bloc?.add(FormSubmit());
           }
         },

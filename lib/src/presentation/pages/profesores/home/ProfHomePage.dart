@@ -7,6 +7,7 @@ import 'package:sniper_pro/src/presentation/pages/profesores/category/list/ProfC
 import 'package:sniper_pro/src/presentation/pages/profesores/home/bloc/ProfHomeBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/home/bloc/ProfHomeEvent.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/home/bloc/ProfHomeState.dart';
+import 'package:sniper_pro/src/presentation/pages/profesores/mensajes/create/profMensajeCreatePage.dart';
 
 import 'package:sniper_pro/src/presentation/pages/profile/info/ProfileInfoPage.dart';
 import 'package:sniper_pro/src/presentation/pages/roles/RolesPage.dart';
@@ -24,6 +25,7 @@ class _ProfHomePageState extends State<ProfHomePage> {
     ProfCategoryListPage(),
     ProfileInfoPage(),
     RolesPage(),
+     profMensajeCreatePage(),
 
     //  ProfreportePage(),
   ]; //lista dw widged
@@ -142,6 +144,19 @@ class _ProfHomePageState extends State<ProfHomePage> {
                           Navigator.pop(context);
                         },
                       ),
+                      ListTile(
+                  leading: Image.asset(
+                    'assets/img/ICONOROLES.png',
+                    width: 25,
+                    height: 25,
+                  ),
+                  title: Text('MENSAJES', style: TextStyle(color: Colors.blue)),
+                  selected: state.pageIndex == 3,
+                  onTap: () {
+                    _bloc?.add(ProfChangeDrawerPage(pageIndex: 3));
+                    Navigator.pop(context);
+                  },
+                ),
 
                       ListTile(
                         leading: Image.asset(
@@ -150,7 +165,7 @@ class _ProfHomePageState extends State<ProfHomePage> {
                           height: 25,
                         ),
                         title: Text('Cerrar sesion'),
-                        selected: state.pageIndex == 3,
+                        selected: state.pageIndex == 4,
                         textColor: Colors.white,
                         onTap: () async {
                           _bloc?.add(ProfLogout());

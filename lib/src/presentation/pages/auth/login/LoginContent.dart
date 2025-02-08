@@ -203,7 +203,7 @@ class LoginContent extends StatelessWidget {
           width: 60,
           child: IconButton(
             onPressed: () {
-              launchUrl(Uri.parse("https://wa.link/8uge7s"));
+              launchUrl(Uri.parse("https://wa.link/ixxjx8"));
             },
             icon: Image.asset(
               'assets/img/LOGOWHATSAPP.png',

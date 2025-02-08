@@ -45,6 +45,7 @@ import 'package:sniper_pro/src/presentation/pages/profesores/category/list/bloc/
 import 'package:sniper_pro/src/presentation/pages/profesores/category/update/bloc/ProfCategoryUpdateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/home/bloc/ProfHomeBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/home/bloc/ProfHomeEvent.dart';
+import 'package:sniper_pro/src/presentation/pages/profesores/mensajes/create/bloc/profMensajeCreateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/product/create/bloc/ProfProductCreateBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/product/list/bloc/ProfProducListBloc.dart';
 import 'package:sniper_pro/src/presentation/pages/profesores/product/update/bloc/ProfProductUpdateBloc.dart';
@@ -145,4 +146,7 @@ List<BlocProvider> blocProviders = [
       create: (context) => AdminZoomUpdateBloc(locator<ZoomUseCases>())),
   BlocProvider<AdminMensajeCreateBloc>(
       create: (context) => AdminMensajeCreateBloc(locator<MensajeUseCases>())),
+      
+  BlocProvider<profMensajeCreateBloc>(
+      create: (context) => profMensajeCreateBloc(locator<MensajeUseCases>())),
 ];

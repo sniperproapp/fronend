@@ -62,8 +62,9 @@ class _ProfProductCreatePageState extends State<ProfProductCreatePage> {
         if (responseState is Loading) {
           return Stack(
             children: [
-              ProfProductCreateContent(_bloc, state),
+              //
               Center(child: CircularProgressIndicator()),
+             // ProfProductCreateContent(_bloc, state),
             ],
           );
         }

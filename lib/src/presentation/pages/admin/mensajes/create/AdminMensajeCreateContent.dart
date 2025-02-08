@@ -74,9 +74,7 @@ class AdminMensajeCreateContent extends StatelessWidget {
       onChanged: (text) {
         bloc?.add(TituloChanged(titulo: BlocForItem(value: text)));
       },
-      validator: (value) {
-        return state.titulo.error;
-      },
+       
       color: Colors.white,
     );
   }
@@ -88,9 +86,7 @@ class AdminMensajeCreateContent extends StatelessWidget {
       onChanged: (text) {
         bloc?.add(descriptionChanged(description: BlocForItem(value: text)));
       },
-      validator: (value) {
-        return state.description.error;
-      },
+       
       color: Colors.white,
     );
   }

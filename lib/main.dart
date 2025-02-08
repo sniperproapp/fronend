@@ -18,6 +18,7 @@ import 'package:sniper_pro/src/presentation/pages/admin/product/update/AdminProd
 import 'package:sniper_pro/src/presentation/pages/admin/reporte/adminreportePage.dart';
 import 'package:sniper_pro/src/presentation/pages/admin/user/list/AdminUserListPage.dart';
 import 'package:sniper_pro/src/presentation/pages/auth/login/LoginPage.dart';
+import 'package:sniper_pro/src/presentation/pages/auth/login/bloc/splash_screen.dart';
 import 'package:sniper_pro/src/presentation/pages/auth/logout/LogoutPage.dart';
 import 'package:sniper_pro/src/presentation/pages/auth/recuperarpass/RecuperarpassPage.dart';
 import 'package:sniper_pro/src/presentation/pages/auth/register/RegisterPage.dart';
@@ -69,8 +70,9 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        initialRoute: 'login',
+        initialRoute: 'splash',
         routes: {
+            'splash': (BuildContext context) => SplashScreen(),
           'login': (BuildContext context) => LoginPage(),
           'register': (BuildContext context) => RegisterPage(),
           'recuperarpass': (BuildContext context) => RecuperarpassPage(),
