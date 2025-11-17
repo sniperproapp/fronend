@@ -49,7 +49,7 @@ void main() async {
   );
 
    FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
-  await LocalNotification.initializeLocalNotificatio();
+  await LocalNotification.initializeLocalNotification();
 
   runApp(const MyApp());
 }
