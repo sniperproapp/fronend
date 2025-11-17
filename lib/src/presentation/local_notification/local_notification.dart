@@ -16,7 +16,9 @@ class LocalNotification {
     const initializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/ic_launcher');
     const initializationSettingsDawis = DarwinInitializationSettings(
-        onDidReceiveLocalNotification: iosShowNotification);
+      
+       );
+
     const initializationSettings = InitializationSettings(
         android: initializationSettingsAndroid,
         iOS: initializationSettingsDawis);
