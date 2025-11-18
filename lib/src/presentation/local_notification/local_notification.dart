@@ -48,7 +48,7 @@ class LocalNotification {
           requestBadgePermission: true,
           requestProvisionalPermission: false,
           requestCriticalPermission: false,
-          requestProvidesAppNotificationSettings: false,
+          
           defaultPresentAlert: true,
           defaultPresentSound: true,
           defaultPresentBadge: true,
